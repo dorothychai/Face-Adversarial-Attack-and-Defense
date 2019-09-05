@@ -17,11 +17,39 @@
 
 ### 1. Facenet简介 <span id = "facenet简介">
 
+**(1) 概述**
+
 Facenet是<font color=800080>直接学习图像到欧式空间(Euclidean space)上点的映射，两张图像所对应的特征的欧式空间上的点的距离直接对应着两个图像是否相似</font>。如下图：
 
 ![](https://miro.medium.com/max/1550/1*lR_73E22fvaOfR5pzfOkdQ.png)
 
+用数字表示这图像特征之间的欧式距离，正常来说，图像的类内距离明显的小于类间距离，阈值大约为1.1左右。
 
+**(2) Facenet的结构** 
+
+![](https://miro.medium.com/max/1936/1*ZD-mw2aUQfFwCLS3cV2rGA.png)
+
+如图所示：Deep Architecture就是卷积神经网络去掉sofmax后的结构，经过L2的归一化，然后得到特征表示，基于这个特征表示计算三元组损失。
+
+- batch ：是指输入的人脸图像样本，这里的样本是已经经过人脸检测找到人脸并裁剪到固定尺寸（例如160x160）的图片样本。
+- Deep architecture：指的是采用一种深入学习架构例如imagenet历年冠军网络中的ZF，googlenet等。
+  L2 ：是指特征归一化（使其特征的||f(x)||2=1,这里是2次方的意思。这样所有图像的特征都会被映射到一个超球面上)
+- Embeddings： 就是前面经过深度学习网络，L2归一化后生成的特征向量（这个特征向量就代表了输入的一张样本图片）
+- riplet Loss： 就是有三张图片输入的Loss（之前的都是Double Loss或者 是 SingleLoss）。直接学习特征间的可分性：相同身份之间的特征距离要尽可能的小，而不同身份之间的特征距离要尽可能的大。
+
+**(3) 细节**
+
+- [FaceNet--Google的人脸识别](https://blog.csdn.net/stdcoutzyx/article/details/46687471)
+  - 目标函数
+  - 三元组的选择
+  - 网络模型
+  - 数据和评测
+  - 网络结构的不同
+  - 图像质量的不同
+  - 最终生成向量表示的大小的不同
+  - 训练数据大小的不同
+  - 对齐与否
+- 
 
 
 
