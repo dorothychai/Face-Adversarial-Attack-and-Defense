@@ -5,12 +5,20 @@
 - [下载和安装](https://blog.csdn.net/ITLearnHall/article/details/81708148)
 - [配置环境变量](https://jingyan.baidu.com/article/47a29f24610740c0142399ea.html)
 - [管理虚拟环境](#管理虚拟环境)
+- [安装使用tensorflow](#安装使用tensorflow)
 
 
 
 ## 管理虚拟环境
 
 - [进入虚拟环境](#进入虚拟环境)
+- [查看有哪些虚拟环境](#查看有哪些虚拟环境)
+- [创建虚拟环境](#创建虚拟环境)
+- [使用新的虚拟环境](#使用新的虚拟环境)
+- [虚拟环境的物理路径](#虚拟环境的物理路径)
+- [切换虚拟环境](#切换虚拟环境)
+- [导出虚拟环境配置](#导出虚拟环境配置)
+- [删除虚拟环境](#删除虚拟环境)
 
 1. 打开命令行
 
@@ -26,15 +34,16 @@
 
    ![](../pictures/14-ananconda-activate.png)
 
-3. 查看Ananconda的虚拟环境
+3. 查看Ananconda的虚拟环境 <span id = "查看有哪些虚拟环境">
 
    ```bash
    conda info --env % 查看所有环境，前面有个‘*’的代表当前环境
+   conda env list % 二者均可
    ```
 
    ![](../pictures/15-ananconda-env.png)
 
-4. 创建自己的虚拟环境
+4. 创建自己的虚拟环境 <span id = "创建虚拟环境">
 
    - 安装虚拟环境(virtual environment)的好处：
 
@@ -55,18 +64,111 @@
      创建一个名称为python37的虚拟环境并指定python版本为3.7(这里conda会自动找3.7中最新的版本下载)
 
      ```bash
-     conda  create -n python37  python=3.7
+     conda  create -n python37  python=3.7 % -n就是-name的缩写，所以用-name也是一样的
      ```
 
-     
+5. 使用新的虚拟环境 <span id = "使用新的虚拟环境">
 
-   - 
+   - 激活新创建的虚拟环境：
 
-5. s
+     ```bash
+     conda activate python37
+     ```
 
-6. s
+     ![](../pictures/16-use-new-virtual-environment.png)
+
+   - 查看当前环境有没有安装包：
+
+     ```bash
+     python % 进入python解释器
+     import dlib % 如果有报错说明没有安装此包
+     ```
+
+     ![](../pictures/19-check-if-install-package.png)
+
+   - 为新创建的虚拟环境安装第三方包：
+
+     ```bash
+     pip install numpy
+     conda install numpy % 会同时安装很多相关的包
+     ```
+
+   - 检查包有没有安装上：
+
+     ```bash
+     python % 进入python解释器
+     import dlib % 如果有报错说明没有安装此包
+     ```
+
+   - 卸载第三方包：
+
+     ```bash
+     pip uninstall numpy
+     conda remove numpy % 二者均可
+     ```
+
+   - 查看当前环境的包信息：
+
+     ```bash
+     conda list
+     ```
+
+6. 虚拟环境的物理路径 <span id = "虚拟环境的物理路径">
+
+   ```
+   conda info --env % 就是list中的路径
+   ```
+
+   ![](../pictures/17-virtual-environment-path.png)
+
+7. 切换虚拟环境 <span id = "切换虚拟环境">
+
+   ```
+   activate base % activate [ve_name]
+   ```
+
+   ![](../pictures/18-change-virtual-environment.png)
+
+   ```
+   conda deactivate % 退出环境/切换回原来的环境
+   ```
+
+8. 导出虚拟环境配置 <span id = "导出虚拟环境配置">
+
+   - ```bash
+     cd D:\System\ProgramFiles\Anaconda3\envs
+     d:
+     conda env export > environment.yml
+     ```
+
+     ```bash
+     cd D:\System\ProgramFiles\Anaconda3\envs
+     d:
+     conda env create -f environment.yml
+     ```
+
+   - ```bash
+     cd D:\System\ProgramFiles\Anaconda3\envs
+     d:
+     conda list --explicit > filename.txt
+     ```
+   
+     ```bash
+     cd D:\System\ProgramFiles\Anaconda3\envs
+     d:
+     conda install --name environment_Name --file filename.txt
+     ```
 
 
+9. 删除虚拟环境 <span id = "删除虚拟环境">
+
+   ```bash
+   conda deactivate % 必须先退出当前虚拟环境（如果当前虚拟环境是你要删除的环境的话）
+   conda remove -n python37 --all % 删除虚拟环境
+   ```
+
+
+## 安装使用tensorflow
 
 
 
