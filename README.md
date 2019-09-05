@@ -17,7 +17,7 @@
 
 3. [Adversarial-Face-Attack](https://github.com/ppwwyyxx/Adversarial-Face-Attack)
 
-4. [Cleverhans](https://github.com/tensorflow/cleverhans) : A software library provides standardized reference implementations of adversarial example and adversarial training
+4. [Cleverhans](https://github.com/tensorflow/cleverhans) : A software library provides standardized reference implementations of adversarial example && training
 
 5. [CleverHas Blog](http://www.cleverhans.io/)
 
