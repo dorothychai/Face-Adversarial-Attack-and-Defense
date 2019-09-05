@@ -170,11 +170,24 @@
 
 ## 安装使用tensorflow
 
+- [安装tensorflow](#安装tensorflow)
 
 
 
+1. 安装tensorflow <span id = "安装tensorflow">
 
+   - ```bash
+     conda info --env
+     conda activate python37
+     conda list % 检查有没有安装tensorflow
+     
+     ```
 
+     
+
+   - 
+
+2. 
 
 
 
