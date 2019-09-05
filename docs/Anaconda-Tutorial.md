@@ -171,6 +171,8 @@
 ## 安装使用tensorflow
 
 - [安装tensorflow](#安装tensorflow)
+- [确认tensorflow安装成功](#确认tensorflow安装成功)
+- [查看tensorflow的细节](#查看tensorflow的细节)
 
 
 
@@ -180,14 +182,55 @@
      conda info --env
      conda activate python37
      conda list % 检查有没有安装tensorflow
-     
+     conda install tensorflow-gpu % 默认安装最新版的tensorflow
+     conda list % 检查安装成功没有
      ```
 
-     
+     如果安装成功，在Lib的site-packages目录中会出现名为tensorflow的文件夹(<font color=800080>找ananconda安装的第三方包的方法是一样的，到相似的目录下取找</font>)。
 
-   - 
+     ![](../pictures/20-install-tensorflow.png)
 
-2. 
+2. 确认tensorflow安装成功：
+
+   ```
+   python         % 进入python解释器
+   import tensorflow as tf % 如果没有报错No module named 'tensorflow',那就说明安装成功了
+   ```
+
+3. 查看tensorflow的细节：
+
+   ```bash
+   tf.__version__ % 查看已安装的tensorflow的版本
+   tf.__path__    % 查看已安装的tensorflow的路径
+   ```
+
+   ```python
+   % 确定自己的TensorFlow是CPU还是GPU的版本
+   import numpy
+   import tensorflow as tf
+   a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
+   b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
+   c = tf.matmul(a, b)
+   sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+   print(sess.run(c))
+   ```
+
+   之后就会出现详细的信息：
+
+   ```python
+   Device mapping:
+   /job:localhost/replica:0/task:0/device:GPU:0 -> device: 0, name: Tesla K40c, pci bus
+   id: 0000:05:00.0
+   b: /job:localhost/replica:0/task:0/device:GPU:0
+   a: /job:localhost/replica:0/task:0/device:GPU:0
+   MatMul: /job:localhost/replica:0/task:0/device:GPU:0
+   [[ 22.  28.]
+    [ 49.  64.]]
+   ```
+
+   
+
+4. 
 
 
 
