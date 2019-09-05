@@ -10,12 +10,22 @@
 
 ## Theory
 
-1. [Facenet公式公理](#facenet公式公理)
-2. [Facenet简介](#facenet简介)
+1. [Facenet简介](#facenet简介)
+2. [Facenet公式公理](#facenet公式公理)
 
 
 
-### 1. Facenet公式公理 <span id = "facenet公式公理">
+### 1. Facenet简介 <span id = "facenet简介">
+
+Facenet是<font color=800080>直接学习图像到欧式空间(Euclidean space)上点的映射，两张图像所对应的特征的欧式空间上的点的距离直接对应着两个图像是否相似</font>。如下图：
+
+![](https://miro.medium.com/max/1550/1*lR_73E22fvaOfR5pzfOkdQ.png)
+
+
+
+
+
+### 2. Facenet公式公理 <span id = "facenet公式公理">
 
 人脸相关任务其实分为两部分:人脸检测和人脸识别。
 
@@ -123,12 +133,6 @@ Embedding的主要目的就是对稀疏特征进行降维。看下面这个例�
   softmax交叉熵损失使类间距离变大，中心损失是计算某一图片与该类别图片embeddings的均值的损失，为了使类间距离变小。
 
 - 使用中心损失训练人脸模型的过程:随机初始化各个中心cyi；不断地取出一个batch进行训练，在每个batch中，使用总的损失函数L，除了对神经网络参数计算梯度更新外，也对cyi进行计算梯度，并更新中心的位置。
-
-### 2. Facenet简介 <span id = "facenet简介">
-
-Facenet是<font color=800080>直接学习图像到欧式空间(Euclidean space)上点的映射，两张图像所对应的特征的欧式空间上的点的距离直接对应着两个图像是否相似</font>。如下图：
-
-![](https://miro.medium.com/max/1550/1*lR_73E22fvaOfR5pzfOkdQ.png)
 
 
 
