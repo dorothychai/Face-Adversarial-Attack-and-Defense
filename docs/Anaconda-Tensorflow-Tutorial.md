@@ -1,4 +1,4 @@
-# Anaconda-Tutorial
+# Anaconda-Tensorflow-Tutorial
 
 ## Content
 
@@ -6,6 +6,7 @@
 - [配置环境变量](https://jingyan.baidu.com/article/47a29f24610740c0142399ea.html)
 - [管理虚拟环境](#管理虚拟环境)
 - [安装使用tensorflow](#安装使用tensorflow)
+- [win10 配置tensorflow gpu版--不用装CUDA](https://zhuanlan.zhihu.com/p/51224259)
 
 
 
@@ -39,6 +40,7 @@
    ```bash
    conda info --env % 查看所有环境，前面有个‘*’的代表当前环境
    conda env list % 二者均可
+   conda --version % 查看Ananconda的版本
    ```
 
    ![](../pictures/15-ananconda-env.png)
@@ -170,34 +172,80 @@
 
 ## 安装使用tensorflow
 
-- [安装tensorflow](#安装tensorflow)
-- [确认tensorflow安装成功](#确认tensorflow安装成功)
-- [查看tensorflow的细节](#查看tensorflow的细节)
+1. [先安装Ananconda](https://blog.csdn.net/ITLearnHall/article/details/81708148)
+2. [检查自己的电脑GPU是否支持CUDA](#检查自己的电脑GPU是否支持CUDA)
+3. [安装正确版的CUDA](#安装正确版的CUDA)
+4. [安装CUDNN](#安装正确版的CUDA)
+5. [安装tensorflow](#安装tensorflow)
+6. [确认tensorflow安装成功](#确认tensorflow安装成功)
+7. [查看tensorflow的细节](#查看tensorflow的细节)
 
 
 
-1. 安装tensorflow <span id = "安装tensorflow">
+##### 1. 先安装Ananconda
 
-   - ```bash
+   - 安装前：请先安装ANACONDA，对于WINDOWS来说还是用ANACONDA来安装比较方便一些。
+   - 安装好ANACONDA后，要添加环境。
+
+##### 2. 检查自己的电脑GPU是否支持CUDA <span id = "检查自己的电脑GPU是否支持CUDA">
+
+   - 接下来开始安装TENSORFLOW。
+
+   - 第一步，确定你的安装类型:1)支持GPU类型，还是2）CPU类型。【一般如果做深度学习，最好安装GPU类型，因为运算速度更快】
+
+   - 第二步，如果是CPU类型，按照官网的说法一步一步来就行了。如果是GPU类型，首先需要查看自己电脑的GPU型号,步骤如下。
+
+     ![](../pictures/21-check-GPU-tye.png)
+
+     ![](../pictures/21-check-GPU-type2.png)
+
+   - 然后用谷歌搜索“你的GPU型号+SPECIFICATION”，在官网查它是否支持CUDA。
+
+     Google搜索：你的GPU型号+SPECIFICATION，在官网上查看它是否支持CUDA。
+
+     ![](../pictures/22-support-CUDA.png)
+
+     也可以到这个网站查看CUDA支持的版本：https://developer.nvidia.com/cuda-gpus#collapse4
+
+##### 3. 安装正确版的CUDA <span id = "安装正确版的CUDA">
+
+   - 第三步，重要的事情说三遍：
+     请看清楚你需要的TENSORFLOW型号，以及它需要的环境！ 
+
+   - 在哪里看型号？这个在[TENSORFLOW的官网](https://www.tensorflow.org/install/gpu)上可以查到的，稍微动动手就能找到了，里面包括：
+
+     - [Windows设置](https://www.tensorflow.org/install/gpu#windows_setup)：我自己写了一个<a href="./Install-CUDA-in-Windows.md">在Windows中安装CUDA的简明教程</a>，可以点击查看。
+     - [Linux设置](https://www.tensorflow.org/install/gpu#linux_setup)
+
+
+##### 4. 安装CNDNN 
+
+这一步也写在了<a href="./Install-CUDA-in-Windows.md">在Windows中安装CUDA的简明教程</a>中。
+
+##### 5. 安装tensorflow <span id = "安装tensorflow">
+
+   - 在虚拟环境中安装
+     
+     ```
      conda info --env
      conda activate python37
-     conda list % 检查有没有安装tensorflow
+conda list % 检查有没有安装tensorflow
      conda install tensorflow-gpu % 默认安装最新版的tensorflow
-     conda list % 检查安装成功没有
+conda list % 检查安装成功没有
      ```
-
+     
      如果安装成功，在Lib的site-packages目录中会出现名为tensorflow的文件夹(<font color=800080>找ananconda安装的第三方包的方法是一样的，到相似的目录下取找</font>)。
-
+     
      ![](../pictures/20-install-tensorflow.png)
 
-2. 确认tensorflow安装成功：
+##### 5. 确认tensorflow安装成功：
 
    ```
    python         % 进入python解释器
    import tensorflow as tf % 如果没有报错No module named 'tensorflow',那就说明安装成功了
    ```
 
-3. 查看tensorflow的细节：
+##### 6. 查看tensorflow的细节：
 
    ```bash
    tf.__version__ % 查看已安装的tensorflow的版本
@@ -230,7 +278,7 @@
 
    
 
-4. 
+##### 7. 
 
 
 
