@@ -237,6 +237,16 @@ conda list % 检查安装成功没有
      如果安装成功，在Lib的site-packages目录中会出现名为tensorflow的文件夹(<font color=800080>找ananconda安装的第三方包的方法是一样的，到相似的目录下取找</font>)。
      
      ![](../pictures/20-install-tensorflow.png)
+     
+   - 直接在系统中安装：
+
+     ```
+     pip install tensorflow-gpu
+     ```
+
+     安装完成后会在系统中安装python的文件夹的Lib\site-packages中出现tensorflow文件夹
+
+     
 
 ##### 5. 确认tensorflow安装成功：
 

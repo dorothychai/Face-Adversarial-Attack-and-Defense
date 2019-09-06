@@ -110,8 +110,67 @@
     ```
 
   - ```
+    pip install theano
     pip install pycuda
+  ```
+    
+  - 测试theano有没有安装成功：
+  
+    ```python
+    from theano import function, config, shared, sandbox  
+    import theano.tensor as T  
+    import numpy  
+    import time  
+       
+    vlen = 10 * 30 *768  # 10 x #cores x # threads per core  
+    iters = 1000  
+       
+    rng = numpy.random.RandomState(22)  
+    x =shared(numpy.asarray(rng.rand(vlen), config.floatX))  
+    f = function([],T.exp(x))  
+    printf.maker.fgraph.toposort()  
+    t0 = time.time()  
+    for i inxrange(iters):  
+        r = f()  
+    t1 = time.time()  
+    print 'Looping%d times took' % iters, t1 - t0, 'seconds'  
+    print 'Resultis', r  
+    ifnumpy.any([isinstance(x.op, T.Elemwise) for x in f.maker.fgraph.toposort()]):  
+        print 'Used the cpu'  
+    else:  
+        print 'Used the gpu'  
     ```
+  
+    测试pycuda有没有安装成功：
+  
+    ```python
+    import pycuda.autoinit  
+    import pycuda.driver as drv  
+    import numpy  
+       
+    from pycuda.compiler import SourceModule  
+    mod = SourceModule(""" 
+    __global__  void multiply_them(float *dest, float *a, float *b) 
+    { 
+      const int i = threadIdx.x; 
+      dest[i] = a[i] * b[i]; 
+    } 
+    """)  
+       
+    multiply_them =mod.get_function("multiply_them")  
+       
+    a =numpy.random.randn(400).astype(numpy.float32)  
+    b =numpy.random.randn(400).astype(numpy.float32)  
+       
+    dest = numpy.zeros_like(a)  
+    multiply_them(  
+            drv.Out(dest), drv.In(a), drv.In(b),  
+            block=(400,1,1), grid=(1,1))  
+       
+    print (dest-a*b )
+    ```
+  
+    测试结果：如果你看到了一堆0那么就要恭喜你了。
 
 ## Windows设置
 
