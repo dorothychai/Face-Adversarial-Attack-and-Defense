@@ -28,30 +28,31 @@
 
 必须在系统中安装以下 NVIDIA® 软件：
 
-- [NVIDIA®GPU驱动程序](https://www.nvidia.com/drivers) - CUDA 10.0 需要 410.x 或更高版本。
+##### (1) [NVIDIA®GPU驱动程序](https://www.nvidia.com/drivers) - CUDA 10.0 需要 410.x 或更高版本。
 
-  - ![](../pictures/26-download-CUDA.png)
+- ![](../pictures/26-download-CUDA.png)
 
-  - 查看自己的Windows Driver Type是Standard还是DCH：
+- 查看自己的Windows Driver Type是Standard还是DCH：
 
-    **如何确认我的驱动程序是标准版还是DCH版？**
+  **如何确认我的驱动程序是标准版还是DCH版？**
 
-    由于Intel核显驱动可以直接覆盖安装升级为DCH版驱动，我们这里以Nvidia独显驱动为例，右击桌面空白处，打开Nvidia控制面板，在左下角选择系统信息，在弹出的窗口中有一行“Driver Type”，显示DCH即为DCH驱动，显示Standard即为标准驱动：
+  由于Intel核显驱动可以直接覆盖安装升级为DCH版驱动，我们这里以Nvidia独显驱动为例，右击桌面空白处，打开Nvidia控制面板，在左下角选择系统信息，在弹出的窗口中有一行“Driver Type”，显示DCH即为DCH驱动，显示Standard即为标准驱动：
 
-    ![](../pictures/25-check-DCH.png)
+  ![](../pictures/25-check-DCH.png)
 
-    ![](../pictures/26-check-DCH2.png)
+  ![](../pictures/26-check-DCH2.png)
 
-    ![](../pictures/27-driver-version.png)
+  ![](../pictures/27-driver-version.png)
 
-  - ![](../pictures/28-install-CUDA.png)
+- ![](../pictures/28-install-CUDA.png)
 
-- [CUDA®工具包](https://developer.nvidia.com/cuda-toolkit-archive) - TensorFlow 支持 CUDA 10.0（TensorFlow 1.13.0 及更高版本）
+##### (2) CUDA®工具包](https://developer.nvidia.com/cuda-toolkit-archive) - TensorFlow 支持 CUDA 10.0（TensorFlow 1.13.0 及更高版本）
 
-  - ![](../pictures/29-install-CUDA2.png)
-  - ![](../pictures/30-install-CUDA3.png)
+- ![](../pictures/29-install-CUDA2.png)
 
-- CUDA 工具包附带的 [CUPTI](http://docs.nvidia.com/cuda/cupti/)。
+- ![](../pictures/30-install-CUDA3.png)
+
+##### (3) CUDA 工具包附带的 [CUPTI](https://developer.nvidia.com/rdp/cudnn-download)。
 
   - ![](../pictures/31-CUPTI.png)
 
@@ -88,89 +89,44 @@
 
     ![](../pictures/34-check-CUDA-install-success.png)
 
-- （可选）[TensorRT 5.0](https://docs.nvidia.com/deeplearning/sdk/tensorrt-install-guide/index.html)，可缩短在某些模型上进行推断的延迟并提高吞吐量。
+##### (4)（可选）[TensorRT 5.0](https://docs.nvidia.com/deeplearning/sdk/tensorrt-install-guide/index.html)，可缩短在某些模型上进行推断的延迟并提高吞吐量。
 
-  - 首先要确保安装PyCUDA NVCC 在你的 路径
+首先要确保安装PyCUDA NVCC 在你的 路径
+安装tensorflow对应的python版本 
 
-  - 安装tensorflow对应的python版本
+![](../pictures/35-install-right-python.png)
 
-    ![](../pictures/35-install-right-python.png)
+记得注意什么时候出现添加到PATH，一定要勾选。
 
-    记得注意什么时候出现添加到PATH，一定要勾选。
+选择Customize installation。
 
-    选择Customize installation。
+选择所有的Advanced Options。
 
-    选择所有的Advanced Options。
+手动添加PATH的话，要添加下面两个：
 
-    手动添加PATH的话，要添加下面两个：
+```
+D:\System\ProgramFiles\Python3.6.4
+D:\System\ProgramFiles\Python3.6.4\Scripts
+```
 
-    ```
-    D:\System\ProgramFiles\Python3.6.4
-    D:\System\ProgramFiles\Python3.6.4\Scripts
-    ```
+ ```
+pip install theano
+pip install pycuda
+ ```
 
-  - ```
-    pip install theano
-    pip install pycuda
-  ```
-    
-  - 测试theano有没有安装成功：
-  
-    ```python
-    from theano import function, config, shared, sandbox  
-    import theano.tensor as T  
-    import numpy  
-    import time  
-       
-    vlen = 10 * 30 *768  # 10 x #cores x # threads per core  
-    iters = 1000  
-       
-    rng = numpy.random.RandomState(22)  
-    x =shared(numpy.asarray(rng.rand(vlen), config.floatX))  
-    f = function([],T.exp(x))  
-    printf.maker.fgraph.toposort()  
-    t0 = time.time()  
-    for i inxrange(iters):  
-        r = f()  
-    t1 = time.time()  
-    print 'Looping%d times took' % iters, t1 - t0, 'seconds'  
-    print 'Resultis', r  
-    ifnumpy.any([isinstance(x.op, T.Elemwise) for x in f.maker.fgraph.toposort()]):  
-        print 'Used the cpu'  
-    else:  
-        print 'Used the gpu'  
-    ```
-  
-    测试pycuda有没有安装成功：
-  
-    ```python
-    import pycuda.autoinit  
-    import pycuda.driver as drv  
-    import numpy  
-       
-    from pycuda.compiler import SourceModule  
-    mod = SourceModule(""" 
-    __global__  void multiply_them(float *dest, float *a, float *b) 
-    { 
-      const int i = threadIdx.x; 
-      dest[i] = a[i] * b[i]; 
-    } 
-    """)  
-       
-    multiply_them =mod.get_function("multiply_them")  
-       
-    a =numpy.random.randn(400).astype(numpy.float32)  
-    b =numpy.random.randn(400).astype(numpy.float32)  
-       
-    dest = numpy.zeros_like(a)  
-    multiply_them(  
-            drv.Out(dest), drv.In(a), drv.In(b),  
-            block=(400,1,1), grid=(1,1))  
-       
-    print (dest-a*b )
-    ```
-  
-    测试结果：如果你看到了一堆0那么就要恭喜你了。
+测试theano有没有安装成功：
+
+```
+import theano
+```
+
+测试pycuda有没有安装成功：
+
+```
+import pycuda
+```
+
+测试结果：如果你看到了一堆0那么就要恭喜你了。
 
 ## Windows设置
 

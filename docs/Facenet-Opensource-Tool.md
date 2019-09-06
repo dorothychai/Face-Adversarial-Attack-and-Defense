@@ -17,7 +17,7 @@
 
 ### 1. Facenet简介 <span id = "facenet简介">
 
-**(1) 概述**
+##### (1) 概述
 
 Facenet是<font color=800080>直接学习图像到欧式空间(Euclidean space)上点的映射，两张图像所对应的特征的欧式空间上的点的距离直接对应着两个图像是否相似</font>。如下图：
 
@@ -25,7 +25,7 @@ Facenet是<font color=800080>直接学习图像到欧式空间(Euclidean space)�
 
 用数字表示这图像特征之间的欧式距离，正常来说，图像的类内距离明显的小于类间距离，阈值大约为1.1左右。
 
-**(2) Facenet的结构** 
+##### (2) Facenet的结构
 
 ![](https://miro.medium.com/max/1936/1*ZD-mw2aUQfFwCLS3cV2rGA.png)
 
@@ -37,7 +37,7 @@ Facenet是<font color=800080>直接学习图像到欧式空间(Euclidean space)�
 - Embeddings： 就是前面经过深度学习网络，L2归一化后生成的特征向量（这个特征向量就代表了输入的一张样本图片）
 - riplet Loss： 就是有三张图片输入的Loss（之前的都是Double Loss或者 是 SingleLoss）。直接学习特征间的可分性：相同身份之间的特征距离要尽可能的小，而不同身份之间的特征距离要尽可能的大。
 
-**(3) 细节**
+##### (3) 细节
 
 - [FaceNet--Google的人脸识别](https://blog.csdn.net/stdcoutzyx/article/details/46687471)
   - 目标函数
@@ -49,7 +49,6 @@ Facenet是<font color=800080>直接学习图像到欧式空间(Euclidean space)�
   - 最终生成向量表示的大小的不同
   - 训练数据大小的不同
   - 对齐与否
-- 
 
 
 
@@ -60,7 +59,7 @@ Facenet是<font color=800080>直接学习图像到欧式空间(Euclidean space)�
 - 人脸检测:就是获取图像中所有人脸的位置，并对人脸进行对齐。由于原始图像中的人脸可能存在姿态、位置上的差异，我们需要在获取人脸位置后，检测人脸中的关键点，根据这些关键点将人脸统一校准，以消除姿势不同带来的误差。这方面代表性的算法是MTCNN算法。
 - 人脸识别:输入一张人脸，判断其属于人脸数据集中的哪一个人。这方面的代表算法是facenet。具体来说，就是使用深度卷积网络，将输入的人脸图像转换为一个向量，然后与数据集中各个人脸的向量计算两个向量之间的欧氏距离，对于同一个人的人脸图像，对应的两个向量之间的欧氏距离应该比较小，反之则较大。
 
-**(1) Facenet网络结构**
+##### (1) Facenet网络结构
 
 ```
 NN1/NN2/NN3/NN4/NNS1/NNS2（不同的卷积神经网络）->L2归一化->嵌入层（Embedding）->计算三元组损失（Triplet Loss）和各参数梯度，更新权重
@@ -83,7 +82,7 @@ NNS1 (mini Inception 165×165) 82.4% ± 2.4
 NNS2 (tiny Inception 140×116) 51.9% ± 2.9
 ```
 
-**(2) 嵌入层（Embedding）原理**
+##### (2) 嵌入层（Embedding）原理
 
 Embedding产生的原因主要是因为使用one-hot编码时产生的向量维度很高且非常稀疏。比如我们在做自然语言处理（NLP）中遇到了一个包含2000个词的字典，使用one-hot编码时，每一个词需要用一个2000维的向量来表示，且其中1999维为0。
 Embedding的主要目的就是对稀疏特征进行降维。看下面这个例子:
@@ -96,12 +95,12 @@ Embedding的主要目的就是对稀疏特征进行降维。看下面这个例�
 
 由于在深度神经网络的训练过程中这个全连接层权重也会被更新，如果输入为一个词语集合的one_hot编码，我们就可以对齐进行有效的降维，同时降维后的两两嵌入向量各个维度上的取值之间的差值（距离）还表示这两个嵌入向量代表的词在高维空间上的相似度有多少，我们可以类似使用t-SNE这样的降维技术将这些相似性可视化。
 
-**(3) 直接使用欧氏距离作为损失函数的缺陷**
+##### (3) 直接使用欧氏距离作为损失函数的缺陷
 
 如果我们直接以欧氏距离作为损失函数，模型的训练会出现这样的问题：对于人脸来说，每一类就是一个人，然而每一类中会有很多个样本（一个人有很多照片），直接用欧氏距离相当于<font color=800080>只考虑了类内距离，未考虑类间距离</font>，但实际上有时候类内距离会比类间距离大。
 比如我们可以对MNIST数据集（0-9十个数字的图片）进行降维，使得每张图片最后降维2维，这样每一张图片都是直角坐标系上的一个点，我们可以将所有样本点画在一张图上。我们希望的是类内距离尽可能近，而类间距离尽可能远，但在图上我们会发现，类内中两端样本点之间的距离比图中心不同类之间样本点之间的距离更大。
 
-**(4) 三元组损失（Triplet Loss）**
+##### (4) 三元组损失（Triplet Loss）
 
 实际上三元组损失在facenet之前已经有人提出了，但这里我们以facenet中的三元组损失函数来解释。
 
@@ -134,7 +133,7 @@ Embedding的主要目的就是对稀疏特征进行降维。看下面这个例�
 
 - <font color=800080>使用三元组损失训练人脸模型通常需要非常大的人脸数据集，才能取得较好的效果。另外模型的收敛速度也较慢</font>。
 
-**(5) 中心损失（Center Loss）**
+##### (5) 中心损失（Center Loss）
 
 我们还可以使用中心损失+softmax交叉熵损失作为总损失函数训练facenet模型，可以明显加快模型收敛速度。
 
@@ -177,53 +176,91 @@ Embedding的主要目的就是对稀疏特征进行降维。看下面这个例�
 
 ### 1. 学习facenet精简版 <span id = "学习facenet精简版">
 
-1. **下载facenet精简版代码**：想了解facenet的源码，强烈建议先下载这个：[facenet精简版](https://github.com/boyliwensheng/understand_facenet)，这个代码用于学习以及入门facenet用。（Latest commit on 13 Sep 2018）
+##### (1) 下载facenet精简版代码
 
-   下载并解压：
+想了解facenet的源码，强烈建议先下载这个：[facenet精简版](https://github.com/boyliwensheng/understand_facenet)，这个代码用于学习以及入门facenet用。（Latest commit on 13 Sep 2018）
 
-   ![](../pictures/01-download-understand-facenet.png)
+下载并解压：
 
-2. **下载预训练模型**：facenet提供了两个预训练模型，分别是基于CASIA-WebFace和MS-Celeb-1M人脸库训练的。（2017年5月12日train出来的）
+![](../pictures/01-download-understand-facenet.png)
 
-   链接: [预训练模型百度网盘地址](https://pan.baidu.com/s/1LLPIitZhXVI_V3ifZ10XNg) 密码: 12mh
+##### (2) 下载预训练模型
 
-   ![](../pictures/02-facenet-pre-trained-model.png)
+facenet提供了两个预训练模型，分别是基于CASIA-WebFace和MS-Celeb-1M人脸库训练的。（2017年5月12日train出来的）
 
-   接着将20170512-110547这个文件拷贝到刚才是文件夹里：
+链接: [预训练模型百度网盘地址](https://pan.baidu.com/s/1LLPIitZhXVI_V3ifZ10XNg) 密码: 12mh
 
-   ![](../pictures/03-copy-facenet-pre-trained-model.png)
+![](../pictures/02-facenet-pre-trained-model.png)
 
-   顺便精简一下文件夹的名字，改为facenet。
+接着将20170512-110547这个文件拷贝到刚才是文件夹里：
 
-3. **运行人脸比对程序(compare.py)**：
+![](../pictures/03-copy-facenet-pre-trained-model.png)
 
-   facenet可以直接比对两个人脸经过它的网络映射之后的<font color=800080>欧氏距离</font>。 
+顺便精简一下文件夹的名字，改为facenet。
 
-   ![](../pictures/04-run-compare-py.png)
+##### (3) 运行人脸比对程序(compare.py)
 
-   在compare.py所在目录下放入要比对的文件1.png和2.png，运行compare.py文件，但是会报错。
+facenet可以直接比对两个人脸经过它的网络映射之后的<font color=800080>欧氏距离</font>。 
 
-   这是因为这个程序需要输入参数，在上方的工具栏里选择Run>EditConfigurations ,在Parameters中配置参数：20170512-110547 1.png 2.png。再次运行程序
+![](../pictures/04-run-compare-py.png)
 
-4. 
+在compare.py所在目录下放入要比对的文件1.png和2.png，运行compare.py文件，但是会报错。
 
-5. 
+这是因为这个程序需要输入参数，在上方的工具栏里选择Run>EditConfigurations ,在Parameters中配置参数：20170512-110547 1.png 2.png。再次运行程序
 
-6. 
+如果出现问题，按照如下方式分析解决：
 
-7. 
+```
+python --version % 查看自己的python版本 
+% Python 3.6.4
+pip list % 查看安装的tensorflow-gpu版本
+% tensorflow-gpu       1.14.0
+nvcc --version % 查看自己安装的CUDA版本
+% nvcc: NVIDIA (R) Cuda compiler driver
+% Copyright (c) 2005-2019 NVIDIA Corporation
+% Built on Wed_Apr_24_19:11:20_Pacific_Daylight_Time_2019
+% Cuda compilation tools, release 10.1, V10.1.168
+```
 
+搞清楚自己的tensorflow和CUDA版本之后，通过[tensorflow官网](https://www.tensorflow.org/install/gpu#linux_setup)查找对应版本信息如下：
 
+![](../pictures/37-tensorflow-CUDA-version.png)
 
+可以看到**当Tensorflow的版本>=1.13.0时，CUDA的版本需要是10.0，同时cudnn版本号需要大于7.4.1**；
 
+```
+% 我的CUDA版本是10.1,所以我重装了10.0版本的CUDA将它卸载以适应tensorflow版本
+% 修改相应的一些PATH
+```
 
+<font color=800080>在此记录以下build success的各软件版本</font>
 
+```
+cuda_10.0.130_4...exe % cuda-toolkit
+cudnn-10.0-wind...zip % CUPTI https://developer.nvidia.com/rdp/cudnn-download)
+python % 3.6.4
+tensorflow 1.14.0
+```
 
+报错处理：
 
+```bash
+% 添加
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2' 
+import warnings
+warnings.filterwarnings('ignore',category=FutureWarning)
+% No module named 'sklearn'
+pip install -U scikit-learn scipy matplotlib
+% No module named 'cv2'
+pip install opencv-python
+% No module named 'PIL'
+pip install Pillow
 
-
-
-
+tf.logging.set_verbosity(tf.logging.ERROR)
+% Object arrays cannot be loaded when allow_pickle=False
+pip install numpy==1.16.1
+```
 
 
 

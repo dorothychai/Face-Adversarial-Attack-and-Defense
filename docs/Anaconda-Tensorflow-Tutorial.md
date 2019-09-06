@@ -246,7 +246,7 @@ conda list % 检查安装成功没有
 
      安装完成后会在系统中安装python的文件夹的Lib\site-packages中出现tensorflow文件夹
 
-     
+     ![](../pictures/36-pip-install-tensorflow.png)
 
 ##### 5. 确认tensorflow安装成功：
 
@@ -286,7 +286,7 @@ conda list % 检查安装成功没有
     [ 49.  64.]]
    ```
 
-   
+ 
 
 ##### 7. 
 
