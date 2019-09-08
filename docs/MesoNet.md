@@ -1,0 +1,74 @@
+# MesoNet
+
+## Content
+
+- [Download Github Code](#download)
+- [Deploy Environment](#deploy)
+
+
+
+
+
+### Download Github Code
+
+> 我们提出了一种自动检测视频中面部篡改的方法。我们特别关注用于生成超逼真伪造视频的两种最新方法：deepfake和face2face。传统的图像取证技术通常不太适合视频，因为它们的压缩会严重降低数据质量。因此，我们遵循深度学习方法并构建两个网络，两者都具有较少的层数以关注图像的介观特性。我们在现有数据集和我们从在线视频构成的数据集上评估这些快速网络。我们的测试结果表明，对于深度检测，检测成功率超过98％，对于face2face检测成功检测率为95％。
+
+Github地址：https://github.com/DariusAf/MesoNet
+
+Paper地址：[WIFS 2018 conference](http://wifs2018.comp.polyu.edu.hk/)
+
+全文：[Link to full paper](https://arxiv.org/abs/1809.00888)
+
+Youtute：[Demonstrastion video (light)](https://www.youtube.com/watch?v=vch1CmgX0LA)
+
+### Deploy Environment
+
+- Python3.5
+- Numpy1.14.2
+- Keras2.1.5
+
+1. 首先，安装Ananconda并添加环境变量：
+
+   ![](../pictures/42-Ananconda-path.png)
+
+2. ```
+   打开terminal
+   activate % 激活Ananconda虚拟环境
+   conda info --env % 查看有那些虚拟环境
+   conda create -n python35 python=3.5 % 创建虚拟环境
+   conda activate python35 % 激活指定虚拟环境
+   pip list % 查看当前虚拟环境下的第三方包有哪些
+   pip install numpy==1.14.2 % 安装指定版本第三方包
+   
+   ```
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
