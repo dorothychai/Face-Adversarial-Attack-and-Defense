@@ -420,8 +420,28 @@ input_dir:输入图像的文件夹（E:\facenet\data\lfw）
 output_dir:输出图像的文件夹（E:\facenet\data\lfw_160）
 指定裁剪后图片的大小：--image_size 160 --margin 32 --random_order（如果不指定，默认的裁剪结果是182*182像素的）
 % 比如我的是：E:\facenet\data\lfw E:\facenet\data\lfw_160 --image_size 160 --margin 32 --random_order
-
 ```
+
+按照同样的方法设置参数：
+
+![](../pictures/39-align-dataset-mtcnn.png)
+
+运行结果如下：
+
+![](../pictures/40-align-result.png)
+
+##### (5) 运行训练程序：（train_tripletloss.py）
+
+前边已经下载并处理好了LFW的数据集，现在，可以进行训练了。
+
+运行之前，要在train_tripletloss.py中把加载数据的路径改成自己的数据集所在路径，如下图：
+
+![](../pictures/41-change-default-path.png)
+
+注：train_tripletloss.py和train_softmax.py的区别：这是作者对论文做出的一个延伸，除了使用facenet里提到的train_tripletloss三元组损失函数来训练，还实现了用softmax的训练方法来训练。当然，在样本量很小的情况下，用softmax训练会更容易收敛。但是，当训练集中包含大量的不同个体(超过10万)时，最后一层的softmax输出数量就会变得非常大，但是使用train_tripletloss的训练仍然可以正常工作。
+
+
+
 
 
 
