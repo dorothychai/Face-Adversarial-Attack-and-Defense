@@ -406,13 +406,22 @@ if __name__ == '__main__':
 
 ![](../pictures/38-compare-py-result.png)
 
+##### (4) 图片预处理——运行人脸对齐程序（align_dataset_mtcnn.py）
 
+我们可以下载LFW数据集用来测试这个程序，也为后边的训练函数做好数据准备。
 
+下载链接：http://vis-www.cs.umass.edu/lfw/。下载后解压在data文件夹中。
 
+因为程序中神经网络使用的是谷歌的“inception resnet v1”网络模型，这个模型的输入是160x160的图像，而我们下载的LFW数据集是250x250限像素的图像，所以需要进行图片的预处理。
 
+```
+% 在运行时需要输入的参数：
+input_dir:输入图像的文件夹（E:\facenet\data\lfw）
+output_dir:输出图像的文件夹（E:\facenet\data\lfw_160）
+指定裁剪后图片的大小：--image_size 160 --margin 32 --random_order（如果不指定，默认的裁剪结果是182*182像素的）
+% 比如我的是：E:\facenet\data\lfw E:\facenet\data\lfw_160 --image_size 160 --margin 32 --random_order
 
-
-
+```
 
 
 
