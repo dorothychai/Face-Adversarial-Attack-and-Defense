@@ -266,9 +266,21 @@ tensorflow 1.14.0
 
   - 或者下载cmake，把cmake的bin目录放进环境变量
 
-- pip install python-dev
-
 - pip install dlib
+
+  - 或者从网上下载dlib-19.7.0-cp36-cp36m-win_amd64.whl文件
+
+  - 利用cd定位到dlib whl文件所在路径，执行：
+
+    ```
+    pip install dlib-19.7.0-cp36-cp36m-win_amd64.whl
+    ```
+
+    安装之后显示：
+
+    ```
+    Successfully installed dlib-19.7.0
+    ```
 
 - pip install matplotlib
 
