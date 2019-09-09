@@ -242,6 +242,39 @@ python % 3.6.4
 tensorflow 1.14.0
 ```
 
+运行之前要先安装dlib库：
+
+- install Visual Studio 2015 above
+
+  - 把\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.16.27023\bin ； Studio\2019\Community\VC\Tools\MSVC\14.16.27023\bin\Hostx64\x64 放进环境变量。
+
+- download Boost C++ Libraries
+
+  - 运行bootstrap.bat文件，会生成b2.exe、bjam.exe、project-config.jam
+
+  - 当前目录下，命令行运行b2 install （耐心等待，2h）
+
+  - 等待之后，执行：
+
+    ```
+    b2 -a --with-python address-model=64 toolset=msvc runtime-link=static
+    ```
+
+  - 把boost..\ ; boost..\libs ; boost..\boost放进环境变量
+
+- pip install cmake
+
+  - 或者下载cmake，把cmake的bin目录放进环境变量
+  - 
+
+- pip install python-dev
+
+- pip install dlib
+
+- pip install matplotlib
+
+- pip install sklearn
+
 报错处理：
 
 ```bash
