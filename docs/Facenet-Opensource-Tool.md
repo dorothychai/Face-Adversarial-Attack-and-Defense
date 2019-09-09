@@ -265,7 +265,6 @@ tensorflow 1.14.0
 - pip install cmake
 
   - 或者下载cmake，把cmake的bin目录放进环境变量
-  - 
 
 - pip install python-dev
 
