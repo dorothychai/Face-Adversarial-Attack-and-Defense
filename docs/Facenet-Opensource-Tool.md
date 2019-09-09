@@ -472,7 +472,7 @@ output_dir:输出图像的文件夹（E:\facenet\data\lfw_160）
 
 ![](../pictures/39-align-dataset-mtcnn.png)
 
-运行结果如下：
+运行结果如下(大概要过几十分钟)：
 
 ![](../pictures/40-align-result.png)
 
@@ -485,6 +485,8 @@ output_dir:输出图像的文件夹（E:\facenet\data\lfw_160）
 ![](../pictures/41-change-default-path.png)
 
 注：`train_tripletloss.py`和`train_softmax.py`的区别：这是作者对论文做出的一个延伸，除了使用facenet里提到的train_tripletloss三元组损失函数来训练，还实现了用softmax的训练方法来训练。当然，在样本量很小的情况下，用softmax训练会更容易收敛。但是，当训练集中包含大量的不同个体(超过10万)时，最后一层的softmax输出数量就会变得非常大，但是使用train_tripletloss的训练仍然可以正常工作。
+
+运行结果如下(不用training server的话，4GPU的笔记本大概要trian三天时间才会有结果)：
 
 
 
