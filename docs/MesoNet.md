@@ -2,14 +2,14 @@
 
 ## Content
 
-- [Download Github Code](#download)
-- [Deploy Environment](#deploy)
+- [Download Github Code](#download-github-code)
+- [Deploy Environment](#deploy-environment)
 
 
 
 
 
-### Download Github Code
+### 1. Download Github Code <span id = "download-github-code">
 
 > 我们提出了一种自动检测视频中面部篡改的方法。我们特别关注用于生成超逼真伪造视频的两种最新方法：deepfake和face2face。传统的图像取证技术通常不太适合视频，因为它们的压缩会严重降低数据质量。因此，我们遵循深度学习方法并构建两个网络，两者都具有较少的层数以关注图像的介观特性。我们在现有数据集和我们从在线视频构成的数据集上评估这些快速网络。我们的测试结果表明，对于深度检测，检测成功率超过98％，对于face2face检测成功检测率为95％。
 
@@ -21,11 +21,18 @@ Paper地址：[WIFS 2018 conference](http://wifs2018.comp.polyu.edu.hk/)
 
 Youtute：[Demonstrastion video (light)](https://www.youtube.com/watch?v=vch1CmgX0LA)
 
-### Deploy Environment
+### 2. Deploy Environment <span id = "deploy-environment">
 
-- Python3.5
-- Numpy1.14.2
-- Keras2.1.5
+- [安装Ananconda并添加环境变量](#安装Ananconda并添加环境变量)
+- [下载face_recognition库](#下载face_recognition库)
+
+环境配置：
+
+```
+Python3.5
+Numpy1.14.2
+Keras2.1.5
+```
 
 如果您想通过视频中的面部提取来使用完整的管道，您还需要以下库：
 
@@ -33,11 +40,11 @@ Youtute：[Demonstrastion video (light)](https://www.youtube.com/watch?v=vch1Cmg
 - [FFMPEG](https://www.ffmpeg.org/download.html)
 - [face_recognition](https://github.com/ageitgey/face_recognition)
 
-1. 首先，安装Ananconda并添加环境变量：
+##### (1) 首先，安装Ananconda并添加环境变量：<span id = "安装Ananconda并添加环境变量">
 
-   ![](../pictures/42-Ananconda-path.png)
+![](../pictures/42-Ananconda-path.png)
 
-2. ```
+   ```
    % 打开terminal
    activate % 激活Ananconda虚拟环境
    conda info --env % 查看有那些虚拟环境
@@ -50,13 +57,20 @@ Youtute：[Demonstrastion video (light)](https://www.youtube.com/watch?v=vch1Cmg
    pip install ffmpeg
    ```
 
-3. 下载face_recognition库：
+##### (2) 下载face_recognition库： <span id = "下载face_recognition库">
 
-   - 先下载dlib库：`pip install dlib`:
-     - [@masoudr's Windows 10 installation guide (dlib + face_recognition)](https://github.com/ageitgey/face_recognition/issues/175#issue-257710508)或者可以看我写的<a href = "../docs/Facenet-Opensource-Tool.md/#运行之前要先安装dlib库">教程</a>
-     - 先下载安装Microsoft Visual Studio 2015 (or newer) with C/C++ Compiler installed. 
-     - [`Boost`](https://blog.csdn.net/qq_27923041/article/details/76153125) library version 1.63 or newer.
-   - 
+- 先下载dlib库：`pip install dlib`:
+  - [@masoudr's Windows 10 installation guide (dlib + face_recognition)](https://github.com/ageitgey/face_recognition/issues/175#issue-257710508)或者可以看我写的<a href = "../docs/Facenet-Opensource-Tool.md/#运行之前要先安装dlib库">教程</a>
+  - 先下载安装Microsoft Visual Studio 2015 (or newer) with C/C++ Compiler installed. 
+  - [`Boost`](https://blog.csdn.net/qq_27923041/article/details/76153125) library version 1.63 or newer.
+  
+- 下载face_recognition module from pypi using pip
+
+  ```bash
+  pip install face_recognition
+  ```
+
+- 如果你安装有问题的话，你也可以用这个提前配置好的[虚拟机](https://medium.com/@ageitgey/try-deep-learning-in-python-now-with-a-fully-pre-configured-vm-1d97d4c3e9b)。
 
 4. 
 
