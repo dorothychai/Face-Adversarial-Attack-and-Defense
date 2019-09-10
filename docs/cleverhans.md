@@ -170,6 +170,16 @@ activate
 conda info --env
 conda  create -n cleverhans python=3.7
 conda activate cleverhans
+pip list % 查看有没有安装tensorflow，如果有，版本是多少
+pip install tensorflow % 这之前要先进行tensorflow相关的配置，facenet里面有做过一遍
+
+cd D:\Project\Face
+d:
+mkdir cleverhans
+git init
+git clone https://github.com/tensorflow/cleverhans
+ls
+cd cleverhans-master
 ```
 
 
