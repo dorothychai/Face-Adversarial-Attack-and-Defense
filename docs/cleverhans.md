@@ -159,11 +159,18 @@ sample_defenses/ens_adv_inception_resnet_v2/ - Inception ResNet v2 model which 
 
 ##### (5) Ready-to-hand <span id = "ready-to-hand">
 
+下面，我将完成如何用`CleverHans`与TensorFlow模型一起使用来制作对抗性示例，以及使模型对对抗示例更加健壮。
 
+**建立**
 
+首先，确保在您的计算机上安装了[TensorFlow](https://www.tensorflow.org/versions/r0.10/get_started/os_setup.html#download-and-setup) 和[Keras](https://keras.io/#installation)，然后克隆`CleverHans` [存储库](https://github.com/tensorflow/cleverhans)。此外，将存储库克隆的路径添加到 `PYTHONPATH`环境变量中。
 
+```bash
+activate
+conda info --env
+conda  create -n cleverhans python=3.7
 
-
+```
 
 
 
