@@ -169,7 +169,7 @@ sample_defenses/ens_adv_inception_resnet_v2/ - Inception ResNet v2 model which 
 activate
 conda info --env
 conda  create -n cleverhans python=3.7
-
+conda activate cleverhans
 ```
 
 
