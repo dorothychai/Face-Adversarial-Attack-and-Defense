@@ -242,9 +242,9 @@ python % 3.6.4
 tensorflow 1.14.0
 ```
 
-运行之前要先安装dlib库：
+运行之前要先安装dlib库<a name="运行之前要先安装dlib库"></a>：
 
-- install Visual Studio 2015 above
+- install Visual Studio 2015 aboves
 
   - 把\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.16.27023\bin ； Studio\2019\Community\VC\Tools\MSVC\14.16.27023\bin\Hostx64\x64 放进环境变量。
 

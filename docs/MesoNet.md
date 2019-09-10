@@ -53,7 +53,7 @@ Youtute：[Demonstrastion video (light)](https://www.youtube.com/watch?v=vch1Cmg
 3. 下载face_recognition库：
 
    - 先下载dlib库：`pip install dlib`:
-     - [@masoudr's Windows 10 installation guide (dlib + face_recognition)](https://github.com/ageitgey/face_recognition/issues/175#issue-257710508)
+     - [@masoudr's Windows 10 installation guide (dlib + face_recognition)](https://github.com/ageitgey/face_recognition/issues/175#issue-257710508)或者可以看我写的<a href = "../docs/Facenet-Opensource-Tool.md/#运行之前要先安装dlib库">教程</a>
      - 先下载安装Microsoft Visual Studio 2015 (or newer) with C/C++ Compiler installed. 
      - [`Boost`](https://blog.csdn.net/qq_27923041/article/details/76153125) library version 1.63 or newer.
    - 
