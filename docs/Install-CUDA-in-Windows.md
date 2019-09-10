@@ -46,7 +46,7 @@
 
 - ![](../pictures/28-install-CUDA.png)
 
-##### (2) CUDA®工具包](https://developer.nvidia.com/cuda-toolkit-archive) - TensorFlow 支持 CUDA 10.0（TensorFlow 1.13.0 及更高版本）
+##### (2) CUDA®工具包](https://developer.nvidia.com/cuda-toolkit-archive) - TensorFlow 支持 CUDA 10.0（TensorFlow 1.13.0 及更高版本）(此处应该安装10.0的版本)
 
 - ![](../pictures/29-install-CUDA2.png)
 
@@ -130,14 +130,14 @@ import pycuda
 
 ## Windows设置
 
-将 CUDA、CUPTI 和 cuDNN 安装目录添加到 `%PATH%` 环境变量中。
+将 CUDA、CUPTI 和 cuDNN 安装目录添加到 `%PATH%` 环境变量中。（TensorFlow 支持 CUDA 10.0）
 
 ```
-D:\System\ProgramFiles\NVIDIA GPU Computing Toolkit\CUDA\v10.1\bin
+D:\System\ProgramFiles\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin
 
-D:\System\ProgramFiles\NVIDIA GPU Computing Toolkit\CUDA\v10.1\extras\CUPTI\lib64
+D:\System\ProgramFiles\NVIDIA GPU Computing Toolkit\CUDA\v10.0\extras\CUPTI\lib64
 
-D:\System\ProgramFiles\NVIDIA GPU Computing Toolkit\CUDA\v10.1\include
+D:\System\ProgramFiles\NVIDIA GPU Computing Toolkit\CUDA\v10.0\include
 ```
 
 

@@ -176,7 +176,35 @@ vncserver :2
 
 在用GPU跑并行运算的时候，我们经常会需要<font color=800080>查看GPU的利用率，温度和显存占用率</font>。但对于windows系统而言，在任务管理器内只能看到CPU的利用率和内存占有率等信息，根本没有GPU的相关信息。
 
+- 只要在文件夹C:\Program Files\NVIDIA Corporation\NVSMI里找到文件nvidia-smi.exe，把该文件拖到命令提示符窗口（win+R，再输入‘CMD’进入），就可以显示关于GPU的信息。
 
+- 如果没有NVSMI，可以到这里下载：https://pan.baidu.com/share/init?surl=siAJ8uFgmcrhDTpVPWMmBQ ，提取码：rzmc。
+
+- 如果在该文件下无法解压，则需要修改win10文件夹的权限：
+
+  ![](../pictures/46-change-NVIDIA-folder-right.png)
+
+  然后在“安全”选项卡里，点击“高级”：
+
+  ![](../pictures/47-security-Advanced.png)
+
+  然后点击“所有者”后面的“更改”链接：
+
+  ![](../pictures/48-click-on-change-button.png)
+
+  接着，在“选择用户和组”界面中，点击“高级”按钮：
+
+  ![](../pictures/49-continue-click-on-advanced.png)
+
+  然后，点击“立即查找”按钮，并在列出的用户和组中选择自己登陆的账户，然后点击“确定”按钮：
+
+  ![](../pictures/50-select-user-or-group.png)
+
+  点击“确定”后回到“安全设置”界面（就是Advanced Security Settings for NVIDIA Corporation），勾选“替换子容器和对象所有者”，然后点击“确定”：
+
+  ![](../pictures/51-replace-owner-on-subsontainers.png)
+
+  回到文件或文件夹属性的“安全”界面，然后点击“编辑”按钮，设置你刚添加的帐户为“完全控制”，然后确定即可。最后再确定退出文件属性，就可以对文件进行操作了。
 
 
 
