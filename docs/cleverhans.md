@@ -161,18 +161,22 @@ sample_defenses/ens_adv_inception_resnet_v2/ - Inception ResNet v2 model which 
 
 下面，我将完成如何用`CleverHans`与TensorFlow模型一起使用来制作对抗性示例，以及使模型对对抗示例更加健壮。
 
-**建立**
+- [建立](#建立)
+- [使用keras定义模型](#使用keras定义模型)
+
+**建立** <span id = "建立">
 
 首先，确保在您的计算机上安装了[TensorFlow](https://www.tensorflow.org/versions/r0.10/get_started/os_setup.html#download-and-setup) 和[Keras](https://keras.io/#installation)，然后克隆`CleverHans` [存储库](https://github.com/tensorflow/cleverhans)。此外，将存储库克隆的路径添加到 `PYTHONPATH`环境变量中。
 
 ```bash
 activate
 conda info --env
-conda  create -n cleverhans python=3.7
+conda  create -n cleverhans python=3.5 % keras支持的python版本是3.5
 conda activate cleverhans
 pip list % 查看有没有安装tensorflow，如果有，版本是多少
-pip install tensorflow % 这之前要先进行tensorflow相关的配置，facenet里面有做过一遍
-
+% 安装tf和keras之前注意，他们的版本要对应，网上查
+pip install tensorflow-gpu==1.3 % 这之前要先进行tensorflow相关的配置，facenet里面有做过一遍
+conda install  keras-gpu=2.1.2
 cd D:\Project\Face
 d:
 mkdir cleverhans
@@ -180,15 +184,96 @@ git init
 git clone https://github.com/tensorflow/cleverhans
 ls
 cd cleverhans-master
+% 最后，将存储库克隆的路径添加到 PYTHONPATH环境变量中。
+% 这允许我们的教程脚本简单地导入库import cleverhans。
 ```
 
+```
+目前已知的keras和tensorflow的对应版本如下：
+tensorflow 1.5 和 keras 2.1.4 ,
+tensorflow 1.4 和 keras 2.1.3搭配，
+tensorflow 1.3 和 keras 2.1.2 搭配，
+tensorflow 1.2 和 keras 2.1.1搭配。
+```
 
+我们知道`Tensorflow`是有支持`GPU`的版本的，如果我们用`GPU`来加速训练模型速度将会有显著的提升!
+当然`Keras`也为我们提供了非常便捷的支持`multi_gpu_model`,如以下代码:我们知道`Tensorflow`是有支持`GPU`的版本的，如果我们用`GPU`来加速训练模型速度将会有显著的提升!
+当然`Keras`也为我们提供了非常便捷的支持`multi_gpu_model`,如以下代码：
 
+```python
+from keras.utils.training_utils import multi_gpu_model
 
+with tf.device('/cpu:0'):
+            model = Xception(weights=None,
+                             input_shape=(height, width, 3),
+                             classes=num_classes)
+# gpus=2 （表示用2个gpu来加速，前提是你的机器上要有2上显示）
+multi_gpu_model(model, gpus=2)
+```
 
+如果运行代码得到以下错误提示：
 
+```
+ValueError: To call `multi_gpu_model` with `gpus=2`, we expect the following devices to be available: ['/cpu:0', '/gpu:0', '/gpu:1']. However this machine only has: ['/cpu:0']. Try reducing `gpus`.
+```
 
+这表明，你的机器上有可能没有那么多的显示数量，还有一个重要原因是你所安装的`Tensorflow`或者`Keras`本身并没有`GPU`加速的功能。
 
+检查tensorflow或者keras是否支持GPU加速：
+
+- tensorflow
+
+  ```python
+  from tensorflow.python.client import device_lib
+  print(device_lib.list_local_devices())
+  ```
+
+  如果得到以下 输出信息，则表示你所安装的`tensorflow`版本是支持 `GPU`的。如果输出的信息中没有`gpu`的字样，则说明你安装的`tensorlfow`并不支持`GPU`加速：
+
+  ```
+  [
+  name: “/cpu:0”device_type: “CPU”,
+  name: “/gpu:0”device_type: “GPU”
+  ]
+  ```
+
+- keras
+
+  ```python
+  from keras import backend as K
+  print(K.tensorflow_backend._get_available_gpus())
+  ```
+
+  如果输出为 `[]`空，则表示你所安装的`Keras`版本并不支持`GPU`。
+
+安装GPU加速的tensorflow和keras：
+
+- tensorflow：
+
+  ```bash
+  $ pip install tensorflow      # Python 2.7; CPU support (no GPU support)
+  $ pip3 install tensorflow     # Python 3.n; CPU support (no GPU support)
+  $ pip install tensorflow-gpu  # Python 2.7;  GPU support
+  $ pip3 install tensorflow-gpu # Python 3.n; GPU support
+  ```
+
+- keras
+
+  ```
+  % Keras可以通Anaconda来安装带GPU加速的Keras版本!
+  conda install keras-gpu
+  ```
+
+总结步骤：
+
+- 检查你的系统是否有`Nvidia` 的显卡驱动 (`AMD`是无法工作的)。
+- 是否已经安装了`GPU`版本的`Tensorflow`和`Keras` (貌似 tensorlfow 1.2及以后的版本在 *macos* 上都不支持 `GPU`, 貌似网上以可以找到方法来破解)。
+- 是否已经安装的CUDA有以下几个安装包, 如果你的网络可以翻墙也可以看Gootle Tensorflow的官方文档。
+  - [CUDA ToolKit安装请点这里](https://developer.nvidia.com/cuda-zone), [CUDA ToolKit](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/)
+  - [cuDNN SDK](https://developer.nvidia.com/cudnn), [cuDNN SDK安装请点这里](https://docs.nvidia.com/deeplearning/sdk/cudnn-install/)
+- 根据刚才提到的以上方法检查`GPu`是否可以正常的工作了！
+
+**使用keras定义模型** <span id = "使用keras定义模型">
 
 
 
