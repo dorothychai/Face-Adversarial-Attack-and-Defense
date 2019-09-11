@@ -196,6 +196,10 @@ tensorflow 1.3 和 keras 2.1.2 搭配，
 tensorflow 1.2 和 keras 2.1.1搭配。
 ```
 
+一定要跟大家分享以下我成功的配置，因为试了很多次，怕以后忘记，就贴在这里，需要的按照这个来配置就可以了：
+
+![](../pictures/52-success-configuration-tensorflow-keras.png)
+
 我们知道`Tensorflow`是有支持`GPU`的版本的，如果我们用`GPU`来加速训练模型速度将会有显著的提升!
 当然`Keras`也为我们提供了非常便捷的支持`multi_gpu_model`,如以下代码:我们知道`Tensorflow`是有支持`GPU`的版本的，如果我们用`GPU`来加速训练模型速度将会有显著的提升!
 当然`Keras`也为我们提供了非常便捷的支持`multi_gpu_model`,如以下代码：
@@ -274,6 +278,48 @@ ValueError: To call `multi_gpu_model` with `gpus=2`, we expect the following dev
 - 根据刚才提到的以上方法检查`GPu`是否可以正常的工作了！
 
 **使用keras定义模型** <span id = "使用keras定义模型">
+
+1. 先根据`cleverhans/setup.y`中的配置检查自己安装的各个包的版本，符不符合要求。
+
+   - 安装中如果出现错误：
+
+     ```
+     No module named 'tools.nnwrap'
+     ```
+
+     可以尝试使用下面的命令获取pytorch：
+
+     ```bash
+     pip3 install https://download.pytorch.org/whl/cu90/torch-1.1.0-cp36-cp36m-win_amd64.whl
+     pip3 install https://download.pytorch.org/whl/cu90/torchvision-0.3.0-cp36-cp36m-win_amd64.whl
+     ```
+
+     对于其他版本的安装，可以到[这里](https://pytorch.org/get-started/locally/)查找。
+
+2. 认真看README.md，根据其中的要求一步步操作。
+
+3. 来到`scripts`文件夹下，把里面的每一个程序都run一遍：
+
+   - `compute_accuracy.py`
+
+     ```bash
+     python compute_accuracy.py
+     % 如果出现错误cannot import name 'descriptor'
+     pip install --upgrade --no-deps --force-reinstall tensorflow
+     卸载TensorFlow。
+     卸载protobuf（如果安装了protobuf）。
+     重新安装TensorFlow，它还将安装正确的protobuf依赖项。
+     ```
+
+     
+
+   - 
+
+   - 
+
+   - 
+
+4. 
 
 
 
