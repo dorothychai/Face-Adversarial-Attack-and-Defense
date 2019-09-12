@@ -35,6 +35,7 @@ CMD ["/.setup_vm_and_run_tests.sh"]
 - [`sudo apt-get update`](#sudo-apt-get-update)
 - [`sudo apt-get install -y python`](#sudo-apt-get-install-y-python)
 - [`sudo apt-get install -y python-pip`](#sudo-apt-get-install-y-python-pip)
+- [sudo pip install --upgrade pip](#sudo-pip-install-upgrade-pip)
 
 
 
@@ -67,7 +68,21 @@ python有两个著名的包管理工具easy_install.py和pip，easy_install.py�
 
 ![](../pictures/85-install-dependency.png)
 
+##### 4. sudo pip install --upgrade pip <span id = "sudo-pip-install-upgrade-pip">
 
+直接运行是不行的，之前还要做一些操作：
+
+```bash
+cd /usr/local/lib/python3.5/dist-packages
+sudo apt-get install python3-pip
+sudo wget http://bootstrap.pypa.io/get-pip.py
+sudo python3.5 get-pip.py
+which pip
+type pip
+hash -r
+sudo pip install --upgrade pip
+sudo pip install --upgrade setuptools
+```
 
 
 

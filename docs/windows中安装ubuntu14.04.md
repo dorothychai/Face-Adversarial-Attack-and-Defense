@@ -5,6 +5,11 @@
 - [1. 下载安装VirtualBox](#下载安装VirtualBox)
 - [2. 创建虚拟机](#创建虚拟机)
 - [3. 安装ubuntu系统](#安装ubuntu系统)
+- [4. 将win中的文件传给ubuntu](#将win中的文件传给ubuntu)
+
+
+
+- )
 
 
 
@@ -228,7 +233,7 @@ SERVICE_NAME: vboxdrv
 
 按照上述步骤安装完成以后，可能有部分人有无法连接网络的情况。不能联网的读者可以选择切换当前网络模式到桥接模式。可以联网的人请跳过此步骤。
 
-
+### 4. 将win中的文件传给ubuntu <span id = "将win中的文件传给ubuntu">
 
 
 
