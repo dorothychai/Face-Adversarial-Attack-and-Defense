@@ -224,9 +224,9 @@ SERVICE_NAME: vboxdrv
 
 ![](../pictures/82-install-ubuntu1404.png)
 
+到此为止，在win10上用virtualBox虚拟机安装Ubuntu14.04的教程结束。
 
-
-
+按照上述步骤安装完成以后，可能有部分人有无法连接网络的情况。不能联网的读者可以选择切换当前网络模式到桥接模式。可以联网的人请跳过此步骤。
 
 
 

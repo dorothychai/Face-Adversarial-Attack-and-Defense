@@ -19,3 +19,13 @@ RUN chmod +x /.setup_vm_and_run_tests.sh
 CMD ["/.setup_vm_and_run_tests.sh"]
 ```
 
+## Content
+
+- [1. 安装ubuntu14.04系统](#安装ubuntu14.04系统)
+
+
+
+### 1. 安装ubuntu14.04系统 <span id = "安装ubuntu14.04系统">
+
+点击<a href="../docs/windows中安装ubuntu14.04.md">在win10中安装ubuntu14.04</a>，可以看到我写的教程。
+
