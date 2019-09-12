@@ -10,6 +10,8 @@
 
 ### 1. 下载安装VirtualBox <span id = "下载安装VirtualBox">
 
+VirtualBox是开源软件，中文界面，比VMware小多了，配置简单，社区活跃，好处多多。
+
 下载 [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
 ![](../pictures/53-install-virtual-box.png)
@@ -60,11 +62,28 @@
 
 ![](../pictures/63-virtual-machine-setting.png)
 
+可在”系统”中设置处理器数量，可根据自己电脑实际性能设定：
 
+- 不是客户机的 vCPU 越多，其性能就越好，因为线程切换会耗费大量的时间；应该根据负载需要分配最少的 vCPU。
+- 主机上的客户机的 vCPU 总数不应该超过物理 CPU 内核总数。不超过的话，就不存在 CPU 竞争，每个 vCPU 线程在一个物理 CPU 核上被执行；超过的话，会出现部分线程等待 CPU 以及一个 CPU 核上的线程之间的切换，这会有 overhead。
+- 将负载分为计算负载和 I/O 负载，对计算负载，需要分配较多的 vCPU，甚至考虑 CPU 亲和性，将指定的物理 CPU 核分给给这些客户机。
 
+此处出现错误：
 
+```
+硬件加速配置页已启用硬件虚拟化，但主机并不知支持。需要禁用硬件虚拟化才能启动虚拟机。
+```
 
+出现的原因在于，你电脑的BIOS没有将”虚拟化”选项设为“允许”，解决方法：
 
+```
+进入你的BIOS，然后将virtualization（虚拟化）设置为enable即可
+% 进入BIOS的方法：开机后连续点击“Delete”键，直到出现BIOS界面
+1. 重启电脑进入BIOS
+2. 找到CPU Configuration> Intel Virtualization Technology
+3. 设置为Enabled
+4. 保存退出，重启电脑，再次启动虚拟机
+```
 
 
 
