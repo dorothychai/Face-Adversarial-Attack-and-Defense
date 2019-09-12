@@ -48,13 +48,24 @@ windows下安装软件点击exe，ubuntu不是这样，它会维护一个自己�
 
 `apt-get`自动从互联网的软件仓库中搜索、安装、升级、卸载软件或者操作系统，该命令需要root权限才能执行即`sudo`。`sudo apt-get install -y python`就是安装python，可以指定安装python3.5版本：`sudo apt-get install -y python3.5`。
 
+ubuntu自带python2.7（不能卸载，卸载会出现意想不到的效果），安装python3.5，再把默认的python指向python3.5即可：
+
+```bash
+sudo apt-get install -y python3.5
+python -V % 可以看到现在的版本号还是2.7.6 也可以 which python
+whereis python % 可以看到python安装的位置
+sudo rm /usr/bin/python
+sudo ln -s /usr/python3.5 /usr/bin/python
+python -V % 现在已经变为3.5.2了
+```
+
 ![](../pictures/84-install-dependency.png)
 
 ##### 3. sudo apt-get install -y python-pip <span id = "sudo-apt-get-install-y-python-pip">
 
 python有两个著名的包管理工具easy_install.py和pip，easy_install.py是默认安装的，pip是需要手动安装的。
 
-
+![](../pictures/85-install-dependency.png)
 
 
 
