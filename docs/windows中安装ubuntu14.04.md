@@ -56,6 +56,9 @@
 
 ### 3. 安装ubuntu系统 <span id = "安装ubuntu系统">
 
+在新建的虚拟机上右键选择”设置“：
+
+![](../pictures/63-virtual-machine-setting.png)
 
 
 
@@ -81,8 +84,7 @@
 
 
 
-
-
+![]()
 
 
 
