@@ -214,6 +214,10 @@ SERVICE_NAME: vboxdrv
 
 现在安装过程，系统会自动安装，不要点击skip，可以泡杯咖啡，等候系统自动安装完成。
 
+![](../pictures/80-install-ubuntu1404.png)
+
+安装完成，重启。“现在重启”只是重启虚拟机系统的运行，并不是重启Windows系统：
+
 
 
 
