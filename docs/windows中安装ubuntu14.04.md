@@ -134,13 +134,33 @@ Ubuntu14.04的iso文件可以点击[此处](http://releases.ubuntu.com/14.04/)�
 
 ![](../pictures/68-start-install-ubuntu1404.png)
 
+此处出错如下：
 
+```
+make sure the kernel module has been loaded success
+driver is probably stuck stopping/starting
+```
 
+在命令行里运行：
 
+```bash
+sc.exe query vboxdrv
+```
 
+显示如下：
 
+```
+SERVICE_NAME: vboxdrv
+        TYPE               : 1  KERNEL_DRIVER
+        STATE              : 1  STOPPED % 正常是RUNNING状态
+        WIN32_EXIT_CODE    : 1077  (0x435)
+        SERVICE_EXIT_CODE  : 0  (0x0)
+        CHECKPOINT         : 0x0
+        WAIT_HINT          : 0x0
+```
 
-
+找到安装目录下的vboxdrv文件夹，
+如`D:\System\ProgramFiles\Oracle\VirtualBox\drivers\vboxdrv`，右击VBoxDrv.inf，选安装，然后重启电脑。
 
 
 
