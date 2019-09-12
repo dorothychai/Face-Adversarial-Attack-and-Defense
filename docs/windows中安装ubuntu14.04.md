@@ -243,8 +243,9 @@ SERVICE_NAME: vboxdrv
 
 使用FileZilla传输文件需要SSH服务，Ubuntu作为服务端使用需要安装SSH服务端，参考：[Ubuntu下使用SSH和FileZilla远程登陆](https://blog.csdn.net/qiuchengjia/article/details/52923249) ，使用以下命令安装：
 
+**Ubuntu中安装ssh client**
+
 ```bash
-% Ubuntu中安装ssh client
 sudo apt-get install ssh  或者 sudo apt-get install openssh-client
 ssh-keygen 
 % 生成id_rsa和id_rsa.pub文件，分别是私钥和公钥
