@@ -74,22 +74,42 @@ VirtualBox是开源软件，中文界面，比VMware小多了，配置简单，�
 硬件加速配置页已启用硬件虚拟化，但主机并不知支持。需要禁用硬件虚拟化才能启动虚拟机。
 ```
 
+点开任务管理器-性能-cpu：
+
+![](../pictures/64-check-CPU.png)
+
+显示cpu虚拟化已启动就是正常的，未启动则进入bios里打开vt虚拟化。
+
 出现的原因在于，你电脑的BIOS没有将”虚拟化”选项设为“允许”，解决方法：
 
 ```
 进入你的BIOS，然后将virtualization（虚拟化）设置为enable即可
 % 进入BIOS的方法：开机后连续点击“Delete”键，直到出现BIOS界面
+% 不同电脑和厂商，在不同的位置，大致原理一样
 1. 重启电脑进入BIOS
 2. 找到CPU Configuration> Intel Virtualization Technology
+2. DELL的电脑中是：找到Virtualization Support> Virtualization
 3. 设置为Enabled
 4. 保存退出，重启电脑，再次启动虚拟机
 ```
 
+启用或禁用硬件虚拟化技术：
 
+```
+1. 从 System Utilities 屏幕中，选择 System Configuration（系统配置）---> BIOS/Platform Configuration (RBSU)（BIOS/平台配置）--->System Options（系统选项）--->Virtualization Options（虚拟化选项）--->Virtualization Technology（虚拟化技术）--->Enter
+2. 选择一个设置，然后按 Enter
+(1) Enabled（已启用）- 让支持该选项的 VMM 能使用 UEFI Intel 处理器提供的硬件功能。
+(2) Disabled（已禁用）- 禁止 VMM 使用 UEFI Intel 处理器提供的硬件功能。
+3. 按F10
+```
 
+看到已经启动还是无法解决，则看本机有没有安装其他的虚拟机产生不兼容，最可能的是自带的hyper-x：
 
+打开控制面板-程序-程序和功能-启动或关闭windows功能：
 
+![](../pictures/65-windows-function.png)
 
+hyper-v已经启动，这里要是自己不用可以关闭这个功能，把勾去掉就行，如果需要用到vs的安卓和wp虚拟机的话还是保留的好。
 
 
 
