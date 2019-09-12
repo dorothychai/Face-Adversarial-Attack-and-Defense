@@ -218,9 +218,11 @@ SERVICE_NAME: vboxdrv
 
 安装完成，重启。“现在重启”只是重启虚拟机系统的运行，并不是重启Windows系统：
 
+![](../pictures/81-install-ubuntu1404.png)
 
+输入密码：
 
-
+![](../pictures/82-install-ubuntu1404.png)
 
 
 
