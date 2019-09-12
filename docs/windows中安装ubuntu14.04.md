@@ -235,6 +235,57 @@ SERVICE_NAME: vboxdrv
 
 ### 4. 将win中的文件传给ubuntu <span id = "将win中的文件传给ubuntu">
 
+##### (1) 下载FileZilla
+
+通过免费的FTP传输软件FileZilla实现双向传输，只需将[该软件](https://filezilla-project.org/)下载到windows下。
+
+##### (2) 在ubuntu中安装SSH服务端
+
+使用FileZilla传输文件需要SSH服务，Ubuntu作为服务端使用需要安装SSH服务端，参考：[Ubuntu下使用SSH和FileZilla远程登陆](https://blog.csdn.net/qiuchengjia/article/details/52923249) ，使用以下命令安装：
+
+```bash
+% Ubuntu中安装ssh client
+sudo apt-get install ssh  或者 sudo apt-get install openssh-client
+ssh-keygen 
+% 生成id_rsa和id_rsa.pub文件，分别是私钥和公钥
+% 如果sudo apt-get insall ssh出错，无法安装可使用sudo apt-get install openssh-client进行安装
+%%%%
+% Enter file in which to save the key (/home/elaine/.ssh/id_rsa):
+% Created directory '/home/elaine/.ssh'
+% Enter passphrase (empty for no passphrase):elaine
+% Enter same passphrase again:elaine
+% Your identification has been saved in /home/elaine/.ssh/id_rsa.
+% Your public key has been saved in /home/elaine/.ssh/id_rsa.pub.
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
