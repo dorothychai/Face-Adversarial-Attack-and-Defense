@@ -200,6 +200,58 @@ tensorflow 1.2 和 keras 2.1.1搭配。
 
 ![](../pictures/52-success-configuration-tensorflow-keras.png)
 
+跟大家分享所有的这些正确配置：
+
+```bash
+(cleverhans) C:\Users\PC>pip list
+Package                Version
+---------------------- ---------
+absl-py                0.8.0
+astor                  0.8.0
+bleach                 1.5.0
+certifi                2018.8.24
+cleverhans             3.0.1
+cloudpickle            1.2.2
+config                 0.4.2
+cycler                 0.10.0
+decorator              4.4.0
+gast                   0.3.1
+google-pasta           0.1.7
+grpcio                 1.23.0
+h5py                   2.10.0
+html5lib               0.9999999
+Keras                  2.1.2
+Keras-Applications     1.0.8
+Keras-Preprocessing    1.1.0
+kiwisolver             1.1.0
+lxml                   4.4.1
+Markdown               3.1.1
+matplotlib             3.0.3
+mnist                  0.2
+nose                   1.3.7
+numpy                  1.14.5
+Pillow                 6.1.0
+pip                    10.0.1
+protobuf               3.9.1
+pycodestyle            2.5.0
+pyparsing              2.4.2
+python-dateutil        2.8.0
+pytils                 0.3
+PyYAML                 5.1.2
+scipy                  1.3.1
+setuptools             39.1.0
+six                    1.12.0
+tensorboard            1.10.0
+tensorflow             1.10.0
+tensorflow-probability 0.7.0
+termcolor              1.1.0
+tools                  0.1.9
+Werkzeug               0.15.6
+wheel                  0.31.1
+wincertstore           0.2
+wrapt                  1.11.2
+```
+
 我们知道`Tensorflow`是有支持`GPU`的版本的，如果我们用`GPU`来加速训练模型速度将会有显著的提升!
 当然`Keras`也为我们提供了非常便捷的支持`multi_gpu_model`,如以下代码:我们知道`Tensorflow`是有支持`GPU`的版本的，如果我们用`GPU`来加速训练模型速度将会有显著的提升!
 当然`Keras`也为我们提供了非常便捷的支持`multi_gpu_model`,如以下代码：
