@@ -24,6 +24,7 @@ CMD ["/.setup_vm_and_run_tests.sh"]
 - [1. 安装ubuntu14.04系统](#安装ubuntu14.04系统)
 - [2. 安装需要的依赖](#安装需要的依赖)
 - [3. 安装需要的软件](#安装需要的软件)
+- [4. 配置需要的环境](#配置需要的环境)
 
 
 
@@ -141,39 +142,57 @@ sudo pip install --upgrade setuptools
 
 ##### (3) Mongodb <span id = "Mongodb">
 
-- 添加mongodb签名到APT：
+```bash
+% 导入MongoDB 的公钥：
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+% 为MongoDB创建一个list文件(路径：/etc/apt/sources.list.d/mongodb-org-3.2.list):
+sudo mkdir mongodb-org-3.2.list
+echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+% 更新本地资源包数据
+sudo apt-get update
+% 安装最新稳定版本MongoDB
+sudo apt-get install -y mongodb-org
+% 启动mongodb：
+sudo service mongod start
+% 停止mongodb：
+sudo service mongod stop
+% 重启mongodb：
+sudo service mongod restart
+```
 
-  ```bash
-  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-  ```
+### 4. 配置需要的环境 <span id = "配置需要的环境">
 
-- 创建mongodb-org-3.0.list文件：
+```bash
+% 添加环境变量(如果已经存在，不要做此步)
+export PATH = "/home/elaine/ananconda3/bin:$PATH"
+% 在Ananconda中创建一个新的环境
+conda create -n cleverhans python=3.5 
+% 查看目前有哪些环境
+conda info --env 或 conda env list
+% 激活此环境
+source activate cleverhans
+% 关闭此环境
+source deactivate cleverhans
+% 删除一个已有的环境
+conda env remove -n env_name 
+% 分享自己的运行环境
+conda env export > env.yaml
+% 拿到别人分享的环境(yaml文件)，创建一个一模一样的环境
+conda env create -f env.yaml
+% 安装包
+conda install package_name
+% 删除包
+conda reomve package_name
+% 更新包
+conda update package_name
+% 查找是否安装某包
+conda search package_name
+```
 
-  ```bash
-  echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
-  ```
-
-- 更新软件源列表：
-
-  ```bash
-  sudo apt-get update
-  ```
-
-  
-
-- 
-
-- 
-
-- 
-
-- 
-
-- 
-
-
-
-
+```bash
+% 安装python的最新版本3.7
+conda install python=3.7 
+```
 
 
 
