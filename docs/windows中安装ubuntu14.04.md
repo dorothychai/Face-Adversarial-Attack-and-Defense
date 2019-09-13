@@ -241,8 +241,6 @@ SERVICE_NAME: vboxdrv
 
 ![](../pictures/87-copy-file-from-win-to-ubuntu.png)
 
-按win键，搜索“磁盘”，然后挂载iso文件。
-
 然后到ubuntu系统中设置“增强功能”：
 
 ![](../pictures/88-ubuntu-increment-function.png)
