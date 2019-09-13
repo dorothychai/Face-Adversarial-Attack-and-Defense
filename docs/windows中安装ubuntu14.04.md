@@ -280,7 +280,13 @@ sudo apt-get install virtualbox-guest-utils
 % 此问题是由于windows中共享文件夹的名称与ubuntu中的名称相同导致的问题。比如ubuntu中文件夹的名称为share，如果共享文件夹的名字也是share的话，就会出现此错误。
 ```
 
+如果你不想用cd打开，想用图形化界面打开文件夹：
 
+```bash
+gnome-open /mnt/share
+% 可能遇到的问题：程序“gnome-open”尚未安装
+% 解决方法：sudo apt-get install libgnome2-bin
+```
 
 
 
