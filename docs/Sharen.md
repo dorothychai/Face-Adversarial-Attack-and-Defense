@@ -88,6 +88,8 @@ sudo pip install --upgrade setuptools
 ### 3. 安装需要的软件 <span id = "安装需要的软件">
 
 - [PyCharm](#PyCharm)
+- [Ananconda](#Ananconda)
+- [Mongodb](#Mongodb)
 
 
 
@@ -113,17 +115,61 @@ sudo pip install --upgrade setuptools
   % umake -r ide pycharm
   ```
 
+  ![](../pictures/90-pycharm-install-path.png)
+
+##### (2) Ananconda <span id = "Ananconda">
+
+- 首先在官网上[下载anaconda3-4.2.0](https://repo.continuum.io/archive/)对应的是Python3.5.2版本：
+
+  ![](../pictures/91-install-ananconda.png)
+
+- 下载后进入下载文件所在文件夹下，在终端输入如下代码：
+
+  ```bash
+  cd /home/elaine/下载
+  bash Anaconda3-4.2.0-Linux-x86_64.sh
+  % 一路Enter到底安装就行，遇到yes/no,输入yes后回车继续，将anaconda3自动添加到路径
+  ```
+
+  ![](../pictures/92-ananconda-install-path.png)
+
+  ![](../pictures/93-ananconda-environment-path.png)
+
+- 安装完成后重新打开终端输入代码：conda -V查看安装版本：
+
+- 在终端输入python发现依然是Ubuntu自带的python版本，这是因为.bashrc的更新还没有生效，命令行输入： source ~/.bashrc即可。
+
+##### (3) Mongodb <span id = "Mongodb">
+
+- 添加mongodb签名到APT：
+
+  ```bash
+  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+  ```
+
+- 创建mongodb-org-3.0.list文件：
+
+  ```bash
+  echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+  ```
+
+- 更新软件源列表：
+
+  ```bash
+  sudo apt-get update
+  ```
+
   
 
 - 
 
 - 
 
+- 
 
+- 
 
-
-
-
+- 
 
 
 
