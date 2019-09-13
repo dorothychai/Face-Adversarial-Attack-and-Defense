@@ -235,15 +235,23 @@ SERVICE_NAME: vboxdrv
 
 ### 4. 将win中的文件传给ubuntu <span id = "将win中的文件传给ubuntu">
 
-在VirtualBox里可以直接设置：
+**双向拷贝**
+
+在VirtualBox里直接设置：
 
 ![](../pictures/87-copy-file-from-win-to-ubuntu.png)
 
+按win键，搜索“磁盘”，然后挂载iso文件。
 
+然后到ubuntu系统中设置“增强功能”：
 
+![](../pictures/88-ubuntu-increment-function.png)
 
+安装完增强功能，注意要**重启虚拟机**，双向拷贝才被启用。
 
+**文件共享**
 
+首先设置共享文件夹：
 
 
 
