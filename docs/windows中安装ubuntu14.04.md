@@ -253,15 +253,32 @@ SERVICE_NAME: vboxdrv
 
 首先设置共享文件夹：
 
+设置->共享文件夹->添加共享文件夹->勾选自动挂载和固定分配（有时候默认就是固定分配）->点击确定。
 
+![](../pictures/89-share-file-between-win-ubuntu.png)
 
+将刚刚指定的共享文件夹与Ubuntu的某个目录关联起来：
 
+此处我选择在/mnt下创建一个“share”目录，将刚刚的“ubuntu1404”目录与“share”目录关联起来。
 
+```
+cd /mnt % 进入/mnt
+sudo mkdir share % 创建share目录
+sudo mount -t vboxsf ubuntu1404 /mnt/share % 将ubuntu1404目录与share目录进行关联
+```
 
+可能遇到的错误：
 
-
-
-
+```
+% 1. mount: unknown filesystem type ‘vboxsf’ centos ubuntu
+% 此问题是由于ubuntu上没有安装Virtualbox的驱动造成的，执行以下两行命令安装后就可解决
+sudo apt-get update
+sudo apt-get install virtualbox-guest-utils
+% 2. mounting failed with the error: No such device
+% 此问题是由于ubuntu上没有安装增强功能导致的，点击设备->安装增强功能，安装后就可以解决
+% 3. mounting failed with the error: Protocol error
+% 此问题是由于windows中共享文件夹的名称与ubuntu中的名称相同导致的问题。比如ubuntu中文件夹的名称为share，如果共享文件夹的名字也是share的话，就会出现此错误。
+```
 
 
 
