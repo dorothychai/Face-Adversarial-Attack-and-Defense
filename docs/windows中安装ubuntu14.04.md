@@ -259,13 +259,17 @@ ssh-keygen
 % Your public key has been saved in /home/elaine/.ssh/id_rsa.pub.
 ```
 
+**Ubuntu中安装ssh server**
 
+```bash
+sudo apt-get install openssh-server
+```
 
+**用命令ifconfig获取Ubuntu的IP地址**
 
+![](../pictures/86-ifconfig-ubuntu1404.png)
 
-
-
-
+**windows中打开FileZilla**
 
 
 
