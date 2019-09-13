@@ -277,9 +277,129 @@ gnome-open ~/anaconda3/envs/cleverhans/bin
 - [change attack parameters](#change-attack-parameters)
   - `fgsm.py`
 
+**requirements.txt**
 
+```
+absl-py==0.7.1
+asn1crypto==0.24.0
+astor==0.7.1
+atomicwrites==1.3.0
+attrs==19.1.0
+beautifulsoup4==4.7.1
+boost==0.1
+certifi==2019.6.16
+cffi==1.12.3
+chardet==3.0.4
+Click==7.0
+cmake==3.14.4
+conda==4.7.5
+conda-build==3.18.7
+conda-package-handling==1.3.11
+cryptography==2.7
+cycler==0.10.0
+decorator==4.4.0
+dlib==19.17.0
+filelock==3.0.12
+Flask==1.0.3
+gast==0.2.2
+glob2==0.7
+grpcio==1.16.1
+h5py==2.9.0
+idna==2.8
+imageio==2.5.0
+imgaug==0.2.9
+importlib-metadata==0.18
+imutils==0.5.2
+itsdangerous==1.1.0
+Jinja2==2.10.1
+joblib==0.13.2
+Keras==2.2.4
+Keras-Applications==1.0.6
+Keras-Preprocessing==1.0.5
+kiwisolver==1.1.0
+libarchive-c==2.8
+lief==0.9.0
+Markdown==3.1.1
+MarkupSafe==1.1.1
+Mastodon.py==1.4.5
+matplotlib==3.1.0
+mkl-fft==1.0.12
+mkl-random==1.0.2
+mock==3.0.5
+more-itertools==7.2.0
+networkx==2.3
+numpy==1.16.4
+opencv-python==4.1.0.25
+packaging==19.0
+pandas==0.24.2
+Pillow==6.0.0
+pkginfo==1.5.0.1
+pluggy==0.12.0
+protobuf==3.8.0
+psutil==5.6.3
+py==1.8.0
+pycosat==0.6.3
+pycparser==2.19
+pymongo==3.8.0
+pyOpenSSL==19.0.0
+pyparsing==2.4.0
+PyQt5==5.13.0
+PyQt5-sip==4.19.18
+pyqtgraph==0.10.0
+PySocks==1.7.0
+pytest==5.0.1
+python-dateutil==2.8.0
+python-magic==0.4.15
+pytz==2019.1
+PyWavelets==1.0.3
+PyYAML==5.1.1
+requests==2.22.0
+ruamel-yaml==0.15.46
+scikit-image==0.15.0
+scikit-learn==0.21.2
+scipy==1.2.1
+Shapely==1.6.4.post2
+six==1.12.0
+sklearn==0.0
+soupsieve==1.8
+SQLAlchemy==1.3.5
+tensorboard==1.13.1
+tensorboardX==1.8
+tensorflow==1.13.1
+tensorflow-estimator==1.13.0
+termcolor==1.1.0
+torch==1.1.0
+torchvision==0.3.0
+tqdm==4.32.2
+urllib3==1.25.3
+wcwidth==0.1.7
+Werkzeug==0.15.4
+xcrun==0.4
+zipp==0.5.2
+```
 
 ##### (1) untargeted FGSM code <span id = "untargeted-FGSM-code">
+
+```bash
+% 进入PyCharm里的Terminal,当前目录是/mnt/share/Sharen
+cd cleverhans/examples/facenet_adversarial_faces
+python fgsm.py
+```
+
+```bash
+% --------------这里是改错的部分--------------
+pip install pip -U % pip升级版本
+% 1. 安装tensorflow1.13.1
+pip3 install tensorflow==1.13.1
+pip list
+% 2. 安装keras2.2.4
+pip3 install keras==2.2.4
+% 3. 安装torch1.1.0
+pip3 install torch==1.1.0
+% 4. 安装其他的包
+pip3 install joblib==0.13.2
+
+```
 
 
 
