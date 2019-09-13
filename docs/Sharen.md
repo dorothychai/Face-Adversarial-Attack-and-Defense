@@ -192,17 +192,36 @@ conda search package_name
 
 ```bash
 %% 配置环境的指定步骤
+sudo gpt-get install python-pip
+conda install conda
 % 安装python的最新版本3.7
 % conda install python=3.7 
 conda create -n cleverhans python=3.7
 % 安装需要的库
-pip install -r requirements.txt
-
+cd /mnt/share/Sharen
+sudo pip install -r requirements.txt
+% 报错：No package 'libffi' found
+sudo apt-get install libffi-dev
+% 再次安装
+sudo pip install -r requirements.txt
+% 报错：Could not find a version that satisfies the requirement cmake==3.14.4
+% 解决：Ubuntu14.04安装CMake3.14.4
+% (1) 安装之前需要安装g++
+sudo apt-get install g++
+% (2) 进入官网下载cmake-3.14.4.tar.gz:https://cmake.org/files/v3.14/
 ```
 
+![](../pictures/94-cmake-3-14-4.png)
 
-
-
+```bash
+% 解压文件，进入cmake-3.14.4 
+cd /home/elaine/下载/cmake-3.14.4
+sudo ./bootstrap
+sudo make
+sudo make install
+cmake --version % 查看版本信息，返回CMake版本信息，则说明安装成功
+% 如果你想要通过CMake安装OpenCV+OpenCV_Contrib 这里安装的CMake有所不同，需要让CMake支持HTTPS，这样后续make的时候才不会报一些古怪的错误
+```
 
 
 
