@@ -163,6 +163,7 @@ sudo service mongod restart
 ### 4. 配置需要的环境 <span id = "配置需要的环境">
 
 ```bash
+%% 先介绍一些常用指令，但这不是配置环境的指定步骤
 % 添加环境变量(如果已经存在，不要做此步)
 export PATH = "/home/elaine/ananconda3/bin:$PATH"
 % 在Ananconda中创建一个新的环境
@@ -190,8 +191,13 @@ conda search package_name
 ```
 
 ```bash
+%% 配置环境的指定步骤
 % 安装python的最新版本3.7
-conda install python=3.7 
+% conda install python=3.7 
+conda create -n cleverhans python=3.7
+% 安装需要的库
+pip install -r requirements.txt
+
 ```
 
 
