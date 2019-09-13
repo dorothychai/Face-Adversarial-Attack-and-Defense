@@ -162,6 +162,14 @@ sudo service mongod restart
 
 ### 4. 配置需要的环境 <span id = "配置需要的环境">
 
+- [安装python3.7](#安装python3.7)
+- [`pip install -r requirements.exe`安装需要的库](#安装需要的库)
+- [cd到mongod executable所在的目录(if you want to run the attack gui)](#cd到mongod executable所在的目录)
+- [运行`/.mongod`启动mongodb服务器(if you want to run the attack gui)](#启动mongodb服务器)
+- [设置Python Interpreter to python.exe in the virtual env in Ananconda](#设置Python-Interpreter)
+
+
+
 ```bash
 %% 先介绍一些常用指令，但这不是配置环境的指定步骤
 % 添加环境变量(如果已经存在，不要做此步)
@@ -189,6 +197,7 @@ conda update package_name
 % 查找是否安装某包
 conda search package_name
 ```
+##### (1) 安装python3.7 <span id = "安装python3.7">
 
 ```bash
 %% 配置环境的指定步骤
@@ -199,6 +208,10 @@ conda install conda
 conda create -n cleverhans python=3.7
 % 安装需要的库
 cd /mnt/share/Sharen
+```
+##### (2) `pip install -r requirements.exe`安装需要的库 <span id = "安装需要的库">
+
+```bash
 sudo pip install -r requirements.txt
 % 报错：No package 'libffi' found
 sudo apt-get install libffi-dev
@@ -214,7 +227,7 @@ sudo apt-get install g++
 ![](../pictures/94-cmake-3-14-4.png)
 
 ```bash
-% 解压文件，进入cmake-3.14.4 
+% (3)解压文件，进入cmake-3.14.4 
 cd /home/elaine/下载/cmake-3.14.4
 sudo ./bootstrap
 sudo make
@@ -223,25 +236,36 @@ cmake --version % 查看版本信息，返回CMake版本信息，则说明安装
 % 如果你想要通过CMake安装OpenCV+OpenCV_Contrib 这里安装的CMake有所不同，需要让CMake支持HTTPS，这样后续make的时候才不会报一些古怪的错误
 ```
 
+![](../pictures/95-right-cmake-version.png)
 
+```bash
+cd /mnt/share/Sharen
+sudo pip install -r requirements.txt
+```
 
+##### (3) cd到mongod executable所在的目录 <span id = "cd到mongod executable所在的目录">
 
+```bash
+where is mongod
+cd /usr/bin
+```
 
+##### (4) 运行`/.mongod`启动mongodb服务器 <span id = "启动mongodb服务器">
 
+```bash
+./mongod
+```
 
+##### (5) 设置Python Interpreter to python.exe in the virtual env in Ananconda <span id = "设置Python-Interpreter">
 
+```bash
+% ~代表/home/elaine
+cd ~/anaconda3/envs/cleverhans/bin % 里面有python3.7.exe
+gnome-open ~/anaconda3/envs/cleverhans/bin
+% 到pycharm里设置interpreter的时候就选择这个路径下的python3.7.exe
+```
 
-
-
-
-
-
-
-
-
-
-
-
+![](../pictures/96-python-interpreter.png)
 
 
 
