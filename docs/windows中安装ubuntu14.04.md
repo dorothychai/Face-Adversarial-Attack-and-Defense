@@ -6,6 +6,7 @@
 - [2. 创建虚拟机](#创建虚拟机)
 - [3. 安装ubuntu系统](#安装ubuntu系统)
 - [4. 将win中的文件传给ubuntu](#将win中的文件传给ubuntu)
+- [5. 以root身份安装pycharm](#以root身份安装pycharm)
 
 
 
@@ -286,7 +287,7 @@ gnome-open /mnt/share
 % 解决方法：sudo apt-get install libgnome2-bin
 ```
 
-
+### 5. 以root身份安装pycharm <span id = "以root身份安装pycharm">
 
 
 
