@@ -10,10 +10,6 @@
 
 
 
-- )
-
-
-
 ### 1. 下载安装VirtualBox <span id = "下载安装VirtualBox">
 
 VirtualBox是开源软件，中文界面，比VMware小多了，配置简单，社区活跃，好处多多。
@@ -289,9 +285,10 @@ gnome-open /mnt/share
 
 ### 5. 以root身份安装pycharm <span id = "以root身份安装pycharm">
 
+据我所知，没有办法将PyCharm作为普通用户运行。
 
-
-
+- 在ubuntu的Firefox浏览器中输入"PyCharm"，然后到它的官网点击"Download"，在里面的“Community”下面点击“Download”。
+- 
 
 
 
