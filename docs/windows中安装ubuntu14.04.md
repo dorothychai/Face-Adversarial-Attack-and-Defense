@@ -309,23 +309,25 @@ gnome-open /mnt/share
 
 - `rm -rf jdk-8u221-linux-x64.tar.gz`
 
-- 将java的路径添加进环境变量：(使用全局设置方法，它是所有用户的共用的环境变量)
+- 将java的路径添加进环境变量(`/etc/profile`)：
 
-- `sudo gedit ~/.bashrc`
+- 修改前先备份：`sudo cp/etc/profile /etc/profile.bak`
+
+- 添加环境变量`sudo vim /etc/profile` 
 
 - 在文件最底部输入:
 
   ```bash
-  export JAVA_HOME=/root/jdk1.8.0_221
+  export JAVA_HOME=/usr/lib/jdk/jdk1.8.0_221
   export JRE_HOME=${JAVA_HOME}/jre
   export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
-  export PATH=${JAVA_HOME}/bin:$PATH
+  export PATH=$PATH:${JAVA_HOME}/bin:${JAVA_HOME}/jre/bin
   ```
 
-- 使`~./bashrc`文件生效：
+- 使`/etc/profile`生效：
 
   ```bash
-  sudo source ~/.bashrc
+  source /etc/profile
   ```
 
 - 测试安装是否成功：
