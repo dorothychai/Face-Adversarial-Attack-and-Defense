@@ -119,6 +119,8 @@ sudo pip install --upgrade setuptools
 
   ![](../pictures/90-pycharm-install-path.png)
 
+这样可以运行，但是对于我的分享文件无法打开，因此我试了另一种方法，<a href = "../docs/windows中安装ubuntu14.04.md">点击此处查看</a>。
+
 ##### (2) Ananconda <span id = "Ananconda">
 
 - 首先在官网上[下载anaconda3-4.2.0](https://repo.continuum.io/archive/)对应的是Python3.5.2版本：
