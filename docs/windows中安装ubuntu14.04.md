@@ -366,11 +366,15 @@ gnome-open /mnt/share
 
 - `./pycharm.sh`
 
+- 可能会有一些警告，这时候要`apt-get install default-jdk`，然后`apt-get update`。
+
 - 生成PyCharm桌面快捷方式(不要参考网上的方法，又麻烦又容易出错)，直接在打开的PyCharm中设置就好了：
 
   ![](../pictures/99-pycharm-desktop.png)
 
   接着点击"create desktop entry for all user"就会在侧边栏生成快捷方式了。
+
+  或者直接点击侧边栏现在出现的PyCharm图标--锁定到启动器。
 
 - 接下来配置Python Interpreter：
 
