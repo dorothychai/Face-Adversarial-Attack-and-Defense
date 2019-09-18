@@ -131,6 +131,9 @@ sudo pip install --upgrade setuptools
 
   ```bash
   cd /home/elaine/下载
+  mkdir /usr/lib/ananconda
+  cp -R Anaconda3-4.2.0-Linux-x86_64.sh /usr/lib/ananconda
+  cd /usr/lib/ananconda
   bash Anaconda3-4.2.0-Linux-x86_64.sh
   % 一路Enter到底安装就行，遇到yes/no,输入yes后回车继续，将anaconda3自动添加到路径
   ```
