@@ -139,7 +139,7 @@ sudo pip install --upgrade setuptools
 
   ![](../pictures/93-ananconda-environment-path.png)
 
-- 安装完成后重新打开终端输入代码：conda -V查看安装版本：
+- 安装完成后重新打开终端输入代码：conda -V查看安装版本。(如果如没有反应，则要更新环境变量`source ~/.bashrc`)
 
 - 在终端输入python发现依然是Ubuntu自带的python版本，这是因为.bashrc的更新还没有生效，命令行输入： source ~/.bashrc即可。
 
