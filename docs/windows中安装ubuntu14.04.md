@@ -341,22 +341,36 @@ gnome-open /mnt/share
 据我所知，没有办法将PyCharm作为普通用户运行。
 
 - 在ubuntu的Firefox浏览器中输入"PyCharm"，然后到它的官网点击"Download"，在里面的“Community”下面点击“Download”。
+
 - 默认存放地址是下载文件夹`/home/elaine/下载`
+
 - Ctrl+Alt+T打开Terminal：`cd ~/下载`
-- `sudo tar zxvf 压缩文件名字 -C /root/`
+
+- `mkdir /usr/lib/pycharm`
+
+- `sudo tar zxvf 压缩文件名字 -C /usr/lib/pycharm`
+
 - `sudo rm -rf 压缩文件名`
-- `cd /root`
+
+- `cd /usr/lib/pycharm`
+
 - `ls`
+
 - `cd pycharm-community-2019.2.2`
+
 - `cd bin`
+
 - `ls`
+
 - `sudo su`
+
 - `./pycharm.sh`
-- 
 
+- 生成PyCharm桌面快捷方式(不要参考网上的方法，又麻烦又容易出错)，直接在打开的PyCharm中设置就好了：
 
+  ![](../pictures/99-pycharm-desktop.png)
 
-
+  接着点击"create desktop entry for all user"就会在侧边栏生成快捷方式了。
 
 
 
