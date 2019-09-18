@@ -285,6 +285,8 @@ gnome-open /mnt/share
 
 ### 5. 以root身份安装pycharm <span id = "以root身份安装pycharm">
 
+一般把要安装的包放在`/usr/lib`目录下并进行安装即可。
+
 首先，安装JAVA JDK(官网下载)，这是必需的：
 
 - 到Firefox浏览器中输入“linux java jdk”，会找到下载它的官网，在其中找到相应版本点击下载：
@@ -295,19 +297,21 @@ gnome-open /mnt/share
 
 - `cd ~/下载`
 
-- `cp -R jdk-8u221-linux-x64.tar.gz /root`
+- `mkdir /usr/lib/jdk`
 
-- `rm -rf jdk-8u221-linux-x64.tar.gz /root`
+- `cp -R jdk-8u221-linux-x64.tar.gz /usr/lib/jdk`
 
-- `cd /root`
+- `rm -rf jdk-8u221-linux-x64.tar.gz`
 
-- `sudo tar zxvf jdk-8u221-linux-x64.tar.gz /root`
+- `cd /usr/lib/jdk`
 
-- `rm -rf jdk-8u221-linux-x64.tar.gz /root`
+- `sudo tar zxvf jdk-8u221-linux-x64.tar.gz`
+
+- `rm -rf jdk-8u221-linux-x64.tar.gz`
 
 - 将java的路径添加进环境变量：(使用全局设置方法，它是所有用户的共用的环境变量)
 
-- `sudo gedit ~./bashrc`
+- `sudo gedit ~/.bashrc`
 
 - 在文件最底部输入:
 
