@@ -372,6 +372,26 @@ gnome-open /mnt/share
 
   接着点击"create desktop entry for all user"就会在侧边栏生成快捷方式了。
 
+- 接下来配置Python Interpreter：
+
+  ![](../pictures/100-pycharm-interpreter.png)
+
+  ![](../pictures/101-pycharm-interpreter.png)
+
+- d
+
+- d
+
+- d
+
+- d
+
+- d
+
+- d
+
+- d
+
 
 
 
