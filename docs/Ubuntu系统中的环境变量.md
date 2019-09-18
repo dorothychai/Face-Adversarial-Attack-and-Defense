@@ -66,7 +66,16 @@
 3. 作用于所有用户：
 
    ```bash
-   
+   # 要使环境变量对所有用户有效，可以修改profile文件
+   sudo vim /etc/profile 
+   ```
+
+   添加语句：
+
+   ```bash
+   export CLASS_PATH=./JAVA_HOME/lib:$JAVA_HOME/jre/lib
+   # 注销或者重启可以使修改生效，如果要使添加的环境变量马上生效：
+   source /etc/profile
    ```
 
    
