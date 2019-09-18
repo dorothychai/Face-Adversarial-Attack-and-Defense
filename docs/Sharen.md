@@ -147,13 +147,13 @@ sudo pip install --upgrade setuptools
 ```bash
 % 导入MongoDB 的公钥：
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-% 为MongoDB创建一个list文件(路径：/etc/apt/sources.list.d/mongodb-org-3.2.list):
+% 为MongoDB创建一个list文件:
 sudo mkdir mongodb-org-3.2.list
 echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 % 更新本地资源包数据
 sudo apt-get update
 % 安装最新稳定版本MongoDB
-sudo apt-get install -y mongodb-org
+sudo apt-get install -y mongodb-org --force-yes
 % 启动mongodb：
 sudo service mongod start
 % 停止mongodb：
