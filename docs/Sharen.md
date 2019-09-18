@@ -131,18 +131,14 @@ sudo pip install --upgrade setuptools
 
   ```bash
   cd /home/elaine/下载
-  mkdir /usr/lib/ananconda
-  cp -R Anaconda3-4.2.0-Linux-x86_64.sh /usr/lib/ananconda
-  cd /usr/lib/ananconda
   bash Anaconda3-4.2.0-Linux-x86_64.sh
-  % 一路Enter到底安装就行，遇到yes/no,输入yes后回车继续，将anaconda3自动添加到路径
   ```
 
   ![](../pictures/92-ananconda-install-path.png)
 
   ![](../pictures/93-ananconda-environment-path.png)
 
-- 安装完成后重新打开终端输入代码：conda -V查看安装版本。(如果如没有反应，则要更新环境变量`source ~/.bashrc`)
+- 安装完成后重新打开终端输入代码：conda -V查看安装版本。(如果如没有反应，则要更新环境变量`source ~/.bashrc`，这里根据图中显示，应该是`souce /root/.bashrc`)
 
 - 在终端输入python发现依然是Ubuntu自带的python版本，这是因为.bashrc的更新还没有生效，命令行输入： source ~/.bashrc即可。
 
