@@ -203,7 +203,7 @@ conda search package_name
 
 ```bash
 %% 配置环境的指定步骤
-sudo gpt-get install python-pip
+sudo apt-get install python-pip
 conda install conda
 % 安装python的最新版本3.7
 % conda install python=3.7 
@@ -494,6 +494,7 @@ pip3 install wcwidth==0.1.7
 pip3 install Werkzeug==0.15.4
 pip3 install xcrun==0.4
 pip3 install zipp==0.5.2
+
 ```
 
 
