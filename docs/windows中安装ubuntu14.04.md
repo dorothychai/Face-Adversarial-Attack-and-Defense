@@ -285,14 +285,46 @@ gnome-open /mnt/share
 
 ### 5. 以root身份安装pycharm <span id = "以root身份安装pycharm">
 
+首先，安装JAVA JDK，这是必需的：
+
+- 到Firefox浏览器中输入“linux java jdk”，会找到下载它的官网，在其中找到相应版本点击下载：
+
+  ![](../pictures/97-java-jdk.png)
+
+- 下载好后，将其放在linux系统的`/root`目录下，执行安装操作。
+
+- `cd ~/下载`
+
+- `cp -R jdk-8u221-linux-x64.tar.gz /root`
+
+- `rm -rf jdk-8u221-linux-x64.tar.gz /root`
+
+- `cd /root`
+
+- `sudo tar zxvf jdk-8u221-linux-x64.tar.gz /root`
+
+- `rm -rf jdk-8u221-linux-x64.tar.gz /root`
+
+- 将java的路径添加进环境变量：
+
+- `sudo gedit ~/.bashrc`
+
+- 在文件最后输入:
+
+  ```
+  
+  ```
+
+- 
+
 据我所知，没有办法将PyCharm作为普通用户运行。
 
 - 在ubuntu的Firefox浏览器中输入"PyCharm"，然后到它的官网点击"Download"，在里面的“Community”下面点击“Download”。
 - 默认存放地址是下载文件夹`/home/elaine/下载`
 - Ctrl+Alt+T打开Terminal：`cd ~/下载`
-- `sudo tar zxvf 压缩文件名字 -C /opt/`
+- `sudo tar zxvf 压缩文件名字 -C /root/`
 - `sudo rm -rf 压缩文件名`
-- `cd /opt`
+- `cd /root`
 - `ls`
 - `cd pycharm-community-2019.2.2`
 - `cd bin`
