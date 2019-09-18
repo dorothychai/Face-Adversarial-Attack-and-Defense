@@ -288,6 +288,17 @@ gnome-open /mnt/share
 据我所知，没有办法将PyCharm作为普通用户运行。
 
 - 在ubuntu的Firefox浏览器中输入"PyCharm"，然后到它的官网点击"Download"，在里面的“Community”下面点击“Download”。
+- 默认存放地址是下载文件夹`/home/elaine/下载`
+- Ctrl+Alt+T打开Terminal：`cd ~/下载`
+- `sudo tar zxvf 压缩文件名字 -C /opt/`
+- `sudo rm -rf 压缩文件名`
+- `cd /opt`
+- `ls`
+- `cd pycharm-community-2019.2.2`
+- `cd bin`
+- `ls`
+- `sudo su`
+- `./pycharm.sh`
 - 
 
 
