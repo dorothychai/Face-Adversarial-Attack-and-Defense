@@ -336,7 +336,7 @@ gnome-open /mnt/share
   java -version # 查看版本号是否改变
   ```
 
-  
+  ![](../pictures/98-jdk-install.png)
 
 据我所知，没有办法将PyCharm作为普通用户运行。
 
