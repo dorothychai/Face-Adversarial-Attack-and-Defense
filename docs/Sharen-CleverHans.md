@@ -166,7 +166,7 @@ sudo service mongod restart
 ### 4. 配置需要的环境 <span id = "配置需要的环境">
 
 - [安装python3.7](#安装python3.7)
-- [`pip install -r requirements.exe`安装需要的库](#安装需要的库)
+- [`pip install -r requirements.txt`安装需要的库](#安装需要的库)
 - [cd到mongod executable所在的目录(if you want to run the attack gui)](#cd到mongod executable所在的目录)
 - [运行`/.mongod`启动mongodb服务器(if you want to run the attack gui)](#启动mongodb服务器)
 - [设置Python Interpreter to python.exe in the virtual env in Ananconda](#设置Python-Interpreter)
@@ -212,7 +212,7 @@ conda create -n cleverhans python=3.7
 % 安装需要的库
 cd /mnt/share/Sharen
 ```
-##### (2) `pip install -r requirements.exe`安装需要的库 <span id = "安装需要的库">
+##### (2) `pip install -r requirements.txt`安装需要的库 <span id = "安装需要的库">
 
 ```bash
 sudo pip install -r requirements.txt
