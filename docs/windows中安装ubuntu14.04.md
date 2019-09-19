@@ -8,6 +8,7 @@
 - [4. 将win中的文件传给ubuntu](#将win中的文件传给ubuntu)
 - [5. 以root身份安装pycharm](#以root身份安装pycharm)
 - [6. 以root权限在pycharm中运行python文件](#以root权限在pycharm中运行python文件)
+- [7. 在pycharm中设置conda虚拟环境python解释器](#在pycharm中设置conda虚拟环境python解释器)
 
 
 
@@ -388,15 +389,16 @@ gnome-open /mnt/share
 
 - 以`sudo`启动IDE：
 
-  ```
+  ```bash
   find / -name pycharm.sh 或 locate pycharm.sh
   cd /usr/lib/pycharm/pycharm-community-2019.2.2/bin
-  sudo bash pycharm.sh
+  sudo su
+  bash pycharm.sh
   ```
 
-- 
+### 7. 在pycharm中设置conda虚拟环境python解释器 <span id = "在pycharm中设置conda虚拟环境python解释器">
 
-
+File--->Settings--->Project--->Project Interpreter--->Add--->`/usr/lib/anaconda/envs/cleverhans/bin/python3.7`
 
 
 
