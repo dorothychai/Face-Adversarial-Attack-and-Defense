@@ -386,7 +386,14 @@ gnome-open /mnt/share
 
 ### 6. 以root权限在pycharm中运行python文件 <span id = "以root权限在pycharm中运行python文件">
 
+- 以`sudo`启动IDE：
 
+  ```
+  find / -name .pycharm.sh
+  sudo /.pycharm.sh
+  ```
+
+- 
 
 
 
