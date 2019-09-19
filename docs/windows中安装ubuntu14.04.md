@@ -7,6 +7,7 @@
 - [3. 安装ubuntu系统](#安装ubuntu系统)
 - [4. 将win中的文件传给ubuntu](#将win中的文件传给ubuntu)
 - [5. 以root身份安装pycharm](#以root身份安装pycharm)
+- [6. 以root权限在pycharm中运行python文件](#以root权限在pycharm中运行python文件)
 
 
 
@@ -382,19 +383,8 @@ gnome-open /mnt/share
 
   ![](../pictures/101-pycharm-interpreter.png)
 
-- d
 
-- d
-
-- d
-
-- d
-
-- d
-
-- d
-
-- d
+### 6. 以root权限在pycharm中运行python文件 <span id = "以root权限在pycharm中运行python文件">
 
 
 
