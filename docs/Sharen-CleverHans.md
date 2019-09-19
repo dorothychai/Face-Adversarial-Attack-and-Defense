@@ -1,4 +1,4 @@
-# Sharen
+# Sharen-CleverHans
 
 cleverhans包含一组攻击方法：
 
@@ -26,6 +26,7 @@ CMD ["/.setup_vm_and_run_tests.sh"]
 - [3. 安装需要的软件](#安装需要的软件)
 - [4. 配置需要的环境](#配置需要的环境)
 - [5. cleverhans程序](#cleverhans程序)
+- [6. cleverhans报错汇总](#cleverhans报错汇总)
 
 
 
@@ -506,6 +507,62 @@ pip3 install zipp==0.5.2
 
 
 ##### (3) change attack parameters <span id = "change-attack-parameters">
+
+
+
+### 6. cleverhans报错汇总 <span id = "cleverhans报错汇总">
+
+- `/Sharen/cleverhans/examples/facenet_adversarial_faces`
+  - [(1) `fgsm.py`](#fgsm-py)
+- 
+
+
+
+**(1) fgsm.py** <span id = "fgsm-py">
+
+- ```bash
+  % 操作
+  cd /mnt/share/Sharen/Sharen/cleverhans/examples/facenet_adversarial_faces
+  python fgsm.py
+  ```
+
+  ```bash
+  % 报错
+  1. ImportError: /lib/x86_64-linux-gnu/libm.so.6: version `GLIBC_2.23' not found (required by /usr/lib/anaconda/envs/cleverhans/lib/python3.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so)
+  2. Failed to load the native TensorFlow runtime.
+  ```
+
+  ```bash
+  % 解决
+  1. TensorFlow时提示Glibc版本过低，需要升级到指定版本
+  (1)在 https://ftp.gnu.org/gnu/glibc/ 里选择下载对应版本
+  如：glibc-2.23.tar.gz
+  (2)指定安装目录 
+  mkdir /usr/lib/glibc 
+  cp -R glibc-2.23.tar.gz /usr/lib/glibc
+  (3)在安装目录解压
+  cd /usr/lib/glibc
+  tar zxvf glibc-2.23.tar.gz
+  rm -rf glibc-2.23.tar.gz
+  (4)编译
+  cd glibc-2.23
+mkdir build
+  cd build 
+../configure --prefix=/usr/lib/glibc/glibc-2.23
+  (5)安装
+  make 
+  make install 
+  (6)添加化境变量
+  vim /etc/profile
+  % 在文件最后一行加入
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/glibc/glibc-2.23
+  (7)使环境变量生效
+  source /etc/profile
+  ```
+  
+  
+  
+- d
 
 
 
