@@ -401,6 +401,12 @@ pip3 install torch==1.1.0
 % 4. 安装dlib19.17.0 这要花点时间，安装过程耐心等待
 pip3 install dlib==19.17.0
 % 5. 安装其他的包
+
+
+pip3 install keras==2.2.4
+pip3 install torch==1.1.0
+pip3 install dlib==19.17.0
+
 pip3 install absl-py==0.7.1
 pip3 install asn1crypto==0.24.0
 pip3 install astor==0.7.1
