@@ -389,8 +389,9 @@ gnome-open /mnt/share
 - 以`sudo`启动IDE：
 
   ```
-  find / -name .pycharm.sh
-  sudo /.pycharm.sh
+  find / -name pycharm.sh 或 locate pycharm.sh
+  cd /usr/lib/pycharm/pycharm-community-2019.2.2/bin
+  sudo bash pycharm.sh
   ```
 
 - 
