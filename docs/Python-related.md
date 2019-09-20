@@ -18,6 +18,7 @@
 
 - [引用模块](#引用模块)
 - [使用通配符导入某个module中的所有元素](#使用通配符导入某个module中的所有元素)
+- [在package内部互相调用](#在package内部互相调用)
 
 包(packages)其实也是模块，其类型Type也是module。通常引用字定义模块时有两种方法：
 
@@ -81,7 +82,22 @@ __all__ = ['module13','module_12']
 ```python
 from package1.subPack1 import *
 module_11.funcA()
+% ImportError: No module named module_11
 ```
+
+也就是说，以`*`导入时，package里的module是受`__init__.py`限制的。
+
+##### 在package内部互相调用 <span id = "在package内部互相调用">
+
+
+
+
+
+
+
+
+
+
 
 
 
