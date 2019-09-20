@@ -19,6 +19,7 @@
 - [引用模块](#引用模块)
 - [使用通配符导入某个module中的所有元素](#使用通配符导入某个module中的所有元素)
 - [在package内部互相调用](#在package内部互相调用)
+- [Python如何找到我们定义的module](#Python如何找到我们定义的module)
 
 包(packages)其实也是模块，其类型Type也是module。通常引用字定义模块时有两种方法：
 
@@ -89,11 +90,23 @@ module_11.funcA()
 
 ##### 在package内部互相调用 <span id = "在package内部互相调用">
 
+- 如果希望调用同一个package里的module，则直接`import`即可。
+  - 也就是说`module_12`中，可以直接使用`import module_11`。
+- 如果不在同一个package中，例如我们希望在`module_21.py`中调用`module_11.py`中的`FuncA`，则应该这样：
+  - `from subPack1.module_11 import funcA`
 
+##### Python如何找到我们定义的module <span id = "Python如何找到我们定义的module">
 
+在标准包`sys`中path属性记录了Python的包路径：
 
+```python
+import sys
+print(sys.path)
+```
 
+通常我们可以将module的包路径放到环境变量PYTHONPATH中，该环境变量会自动添加到sys.path属性。
 
+另一种方法是在编程中直接指定我们的module路径到sys.path中(通常也可以放在`\python3\lib\site-packages`文件夹下)。
 
 
 
