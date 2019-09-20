@@ -98,7 +98,7 @@ sudo pip install --upgrade setuptools
 
 ##### (1) PyCharm <span id = "PyCharm">
 
-- 首先安装umake：
+- 首先安装cmake：
 
   ```bash
   sudo apt-get install software-properties-common
