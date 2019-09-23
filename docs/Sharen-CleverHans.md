@@ -6,6 +6,15 @@ cleverhans包含一组攻击方法：
 - 要生成untargeted FGSM adv图像,请在Pycharm中运行 'fgsm.py' 文件。
 - 攻击参数可以在文件 'fgsm.py' 中修改
 
+```
+fgsm.py 可直接运行主程序，实现FGSM算法生成对抗样本，也能实现防御
+eval_on_adversarisl.py 实现防御训练模型
+checkpoint 两个防御模型
+input 原始输入图像
+output 对抗样本
+通过修改checkpoint_path来实现调用不同模型
+```
+
 <font color=800080>**Dockerfile**</font>：
 
 ```
