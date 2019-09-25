@@ -604,9 +604,31 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
 
+```bash
+% module 'scipy.misc' has no attribute 'imread'
+python 
+import scipy
+scipy.__version__ % 会发现版本是1.3.1,我们要换成1.0.0
+quit()
+pip uninstall scipy
+apt-get install python3-pip
+pip3 install scipy==1.0.0
+conda install -c rpi scipy % 1.0.0
+pip install scipy==1.1.0
+```
+
+```bash
+Traceback (most recent call last):
+  File "facenet_fgsm.py", line 191, in <module>
+    dodge_acc, impersonate_acc = fgsm_attack(eps, steps)
+  File "facenet_fgsm.py", line 151, in fgsm_attack
+    (np.argmax(adversarial_labels[same_faces_index], axis=-1))
+IndexError: index 3 is out of bounds for axis 0 with size 1
+---------------------------------------------------------
 
 
 
+```
 
 
 
