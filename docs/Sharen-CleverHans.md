@@ -36,6 +36,7 @@ CMD ["/.setup_vm_and_run_tests.sh"]
 - [4. 配置需要的环境](#配置需要的环境)
 - [5. cleverhans程序](#cleverhans程序)
 - [6. cleverhans报错汇总](#cleverhans报错汇总)
+- [7. cleverhans注意事项](cleverhans注意事项)
 
 
 
@@ -580,11 +581,28 @@ mkdir build
 
 
 
+### 7. cleverhans注意事项 <span id = "cleverhans注意事项">
 
-
-
-
-
+```bash
+% python37是正常可以运行的virtual environment
+conda info --envs || conda env list
+source activate python37
+cd ~/Documents/fnatk/cleverhans/examples/facenet_adversarial_faces
+% 方法1 (conda环境的全部)
+% 拷贝虚拟环境python37,这个新环境包含python37里的所有一切
+conda create -n cleverhans --clone python37
+% 方法2 (导出conda intall的部分)
+% 导出当前环境python37到文件cleverhans_environment.yaml
+conda env export > cleverhans_environment.yaml
+% 将会在此目录下生成cleverhans_environment.yaml文件
+% 将文件复制到目标机器上，导入环境
+conda env create -f cleverhans_environment.yaml
+% 方法3 (导出pip install的部分)
+% 还有很多包是用pip安装在anaconda3的lib和site-packages中，因此还要用导出pip的方法
+pip freeze > requirements.txt
+% 安装依赖包
+pip install -r requirements.txt
+```
 
 
 
