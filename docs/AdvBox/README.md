@@ -3,22 +3,23 @@
 ## Content
 
 - [AdvBox官方Turorial](#AdvBox-English)
+- [百度安全研究员假脸检测研究](#百度安全研究员假脸检测研究)
 
 
 
-### AdvBox官方Turorial <span id = "AdvBox-English">
+### 1. AdvBox官方Turorial <span id = "AdvBox-English">
 
 #### Advbox Family
 
 ![logo](C:/Users/PC/Desktop/AdvBox/AdvBox/pic/logo.png)
 
-Advbox Family is a series of AI model security tools set of Baidu Open Source,including the generation, detection and protection of adversarial examples, as well as attack and defense cases for different AI applications.
+Advbox Family is a series of AI model security tools set of Baidu Open Source,including the <font color=800080>**generation, detection and protection of adversarial examples**</font>, as well as attack and defense cases for different AI applications.
 
-####### Our Work
+###### Our Work
 
 - [COMMSEC: Tracking Fake News Based On Deep Learning. HITB GSEC 2019](https://gsec.hitb.org/sg2019/sessions/commsec-tracking-fake-news-based-on-deep-learning/)
 - [COMMSEC: Hacking Object Detectors Is Just Like Training Neural Networks. HITB GSEC 2019](https://gsec.hitb.org/sg2019/sessions/commsec-hacking-object-detectors-is-just-like-training-neural-networks/)
-- [COMMSEC: How to Detect Fake Faces (Manipulated Images) Using CNNs. HITB GSEC 2019](https://gsec.hitb.org/sg2019/sessions/commsec-how-to-detect-fake-faces-manipulated-images-using-cnns/)
+- [COMMSEC:<font color=800080> **How to Detect Fake Faces (Manipulated Images) Using CNNs. HITB GSEC 2019**</font>](https://gsec.hitb.org/sg2019/sessions/commsec-how-to-detect-fake-faces-manipulated-images-using-cnns/) [点此了解](https://anquan.baidu.com/article/981)
 - [Transferability of Adversarial Examples to Attack Cloud-based Image Classifier Service. Defcon China 2019](https://www.defcon.org/html/dc-china-1/dc-cn-1-speakers.html)
 - [Face Swapping Video Detection with CNN. Defcon China 2019](https://www.defcon.org/html/dc-china-1/dc-cn-1-speakers.html)
 
@@ -111,9 +112,9 @@ If you instead use AdvBox in an academic publication, cite as:
 
 
 
+### 2. 百度安全研究员假脸检测研究 <span id = "百度安全研究员假脸检测研究">
 
-
-
+![](./pictures/01-百度安全研究员假脸检测研究.PNG)
 
 
 
