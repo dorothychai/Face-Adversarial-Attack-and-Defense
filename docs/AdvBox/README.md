@@ -118,7 +118,7 @@ If you instead use AdvBox in an academic publication, cite as:
 
 ![](./pictures/05-百度安全研究员假脸检测研究.PNG)
 
-
+![](./pictures/06-压缩和缩放的performance.PNG)
 
 
 
