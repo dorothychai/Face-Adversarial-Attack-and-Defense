@@ -131,7 +131,7 @@ If you instead use AdvBox in an academic publication, cite as:
 
 ![](./pictures/10-AdvBox使用.png)
 
-
+![](./pictures/11-AdvBox使用.png)
 
 
 
