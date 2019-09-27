@@ -21,21 +21,21 @@ Advbox Family is a series of AI model security tools set of Baidu Open Source,in
 - [COMMSEC: Hacking Object Detectors Is Just Like Training Neural Networks. HITB GSEC 2019](https://gsec.hitb.org/sg2019/sessions/commsec-hacking-object-detectors-is-just-like-training-neural-networks/)
 - [COMMSEC:<font color=800080> **How to Detect Fake Faces (Manipulated Images) Using CNNs. HITB GSEC 2019**</font>](https://gsec.hitb.org/sg2019/sessions/commsec-how-to-detect-fake-faces-manipulated-images-using-cnns/) [点此了解](https://anquan.baidu.com/article/981)
 - [Transferability of Adversarial Examples to Attack Cloud-based Image Classifier Service. Defcon China 2019](https://www.defcon.org/html/dc-china-1/dc-cn-1-speakers.html)
-- [Face Swapping Video Detection with CNN. Defcon China 2019](https://www.defcon.org/html/dc-china-1/dc-cn-1-speakers.html)
+- [<font color=800080> **Face Swapping Video Detection with CNN**</font>. Defcon China 2019](https://www.defcon.org/html/dc-china-1/dc-cn-1-speakers.html)
 
  
 
 ##### AdvSDK
 
-A Lightweight Adv SDK For PaddlePaddle to generate adversarial examples.
+A Lightweight Adv SDK For PaddlePaddle to <font color=800080> **generate adversarial examples**</font>.
 
 [Homepage of AdvSDK](advsdk/README.md) 
 
 ##### AdvBox
 
-Advbox is a toolbox to generate adversarial examples that fool neural networks in PaddlePaddle、PyTorch、Caffe2、MxNet、Keras、TensorFlow and Advbox can benchmark the robustness of machine learning models.Advbox give a command line tool to generate adversarial examples with Zero-Coding.
+Advbox is a toolbox to <font color=800080> **generate adversarial examples**</font> that fool neural networks in PaddlePaddle、PyTorch、Caffe2、MxNet、Keras、TensorFlow and Advbox can benchmark the robustness of machine learning models. Advbox give a command line tool to generate adversarial examples with Zero-Coding.
 
-[Homepage of AdvBox](advbox.md)
+[Homepage of AdvBox](https://github.com/advboxes/AdvBox/blob/master/advbox.md)
 
 ##### ODD(Object Detector Deception)
 
@@ -113,6 +113,8 @@ If you instead use AdvBox in an academic publication, cite as:
 
 
 ### 2. 百度安全研究员假脸检测研究 <span id = "百度安全研究员假脸检测研究">
+
+![](./pictures/07-fake-face-images-detection.PNG)
 
 ![](./pictures/04-百度安全研究员假脸检测研究.PNG)
 
