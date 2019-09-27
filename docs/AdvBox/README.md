@@ -3,9 +3,12 @@
 ## Content
 
 - [AdvBox官方Turorial](#AdvBox-English)
+
 - [百度安全研究员假脸检测研究](#百度安全研究员假脸检测研究)
+
 - [AdvBox使用](#AdvBox使用)
-- [AdvDetect使用](#AdvDetect使用)
+
+  
 
 
 
@@ -133,8 +136,6 @@ If you instead use AdvBox in an academic publication, cite as:
 ![](./pictures/10-AdvBox使用.png)
 
 ![](./pictures/11-AdvBox使用.png)
-
-### 4. AdvDetect使用 <span id = "AdvDetect使用">
 
 
 
