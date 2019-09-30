@@ -57,6 +57,9 @@
 
 ![](./pictures/02-对抗攻击工具.png)
 
+- IBM开源了检测模型及对抗攻击的工具箱 [Adversarial Robustness Toolbox](https://www.oschina.net/p/adversarial-robustness-toolbox)，该工具箱是用 Python 撰写而成，因为 Python 是建立、测试和部署深度神经网路最常用的语言，包含了对抗和防御攻击的方法。
+
+
 ### 研究对抗攻击的数据集
 
 - 人脸
