@@ -18,8 +18,8 @@
 
 ##### (1) 从攻击环境来分：黑盒攻击、白盒攻击、灰盒攻击
 
-- 黑盒攻击：攻击者对攻击的模型的内部结构，训练参数，防御方法（如果加入了防御手段的话）等等一无所知，<font color=800080>只能通过输出输出与模型进行交互</font>。
-- 白盒攻击：与黑盒模型相反，攻击者对模型一切都可以掌握。目前大多数攻击算法都是白盒攻击。
+- 黑盒攻击：攻击者对攻击的模型的内部结构，训练参数，防御方法（如果加入了防御手段的话）等等一无所知，<font color=800080>只能通过输出输出与模型进行交互</font>，通过输入样本观察输出获得预测结果。
+- 白盒攻击：与黑盒模型相反，攻击者对模型一切都可以掌握，在黑盒的基础上还可以获取模型的参数、梯度等信息。目前大多数攻击算法都是白盒攻击。
 - 灰盒攻击：介于黑盒攻击和白盒攻击之间，仅仅了解模型的一部分。（例如仅仅拿到模型的输出概率，或者只知道模型结构，但不知道参数）
 
 ##### (2) 从攻击的目的来分：有目标攻击、无目标攻击
@@ -38,9 +38,10 @@
 ##### (4) 从攻击的实现来分：基于梯度的攻击、基于优化的攻击、基于决策面的攻击或者其他
 
 - 基于梯度的攻击：
-  - FGSM（Fast Gradient Sign Method)　　
+  - <a href = "./docs/FGSM.md">FGSM（Fast Gradient Sign Method)</a>　　
   - PGD（Project Gradient Descent）
   - MIM（Momentum Iterative Method）
+  - DeepFool（a simple and accurate method to fool deep neural networks）
 - 基于优化的攻击：CW（Carlini-Wagner Attack）
 - 基于决策面的攻击：DEEPFOOL
 - 其他：Pointwise
