@@ -5,6 +5,7 @@
 - [对抗攻击概念](#对抗攻击概念)
 - [对抗攻击分类](#对抗攻击分类)
 - [对抗攻击实现工具](#对抗攻击实现工具)
+- [研究对抗攻击的数据集](#研究对抗攻击的数据集)
 
 
 
@@ -19,6 +20,12 @@
 ##### (1) 从攻击环境来分：黑盒攻击、白盒攻击、灰盒攻击
 
 - 黑盒攻击：攻击者对攻击的模型的内部结构，训练参数，防御方法（如果加入了防御手段的话）等等一无所知，<font color=800080>只能通过输出输出与模型进行交互</font>，通过输入样本观察输出获得预测结果。
+  - Transferable Adversarial Attacks for Image and Video Object Detection
+  - FGSN
+  - AdvGAN
+  - Zeroth Order Optimization Based Black-box Attacks
+  - Evolutionary Attack
+  - Machine Learning as an Adversarial Service: Learning Black-Box Adversarial Examples
 - 白盒攻击：与黑盒模型相反，攻击者对模型一切都可以掌握，在黑盒的基础上还可以获取模型的参数、梯度等信息。目前大多数攻击算法都是白盒攻击。
 - 灰盒攻击：介于黑盒攻击和白盒攻击之间，仅仅了解模型的一部分。（例如仅仅拿到模型的输出概率，或者只知道模型结构，但不知道参数）
 
@@ -50,7 +57,13 @@
 
 ![](./pictures/02-对抗攻击工具.png)
 
+### 研究对抗攻击的数据集
 
+- 人脸
+  - [FaceForensics](https://github.com/ondyari/FaceForensics)
+  - 
+
+- 
 
 
 
