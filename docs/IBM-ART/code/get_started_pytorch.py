@@ -11,7 +11,9 @@ import numpy as np
 from art.attacks import FastGradientMethod
 from art.classifiers import PyTorchClassifier
 from art.utils import load_mnist
+import time
 
+start = time.clock()
 
 # Step 0: 定义神经网络模型，在前向方法中返回logits而不是activation
 
@@ -76,3 +78,6 @@ x_test_adv = attack.generate(x=x_test)
 predictions = classifier.predict(x_test_adv)
 accuracy = np.sum(np.argmax(predictions, axis=1) == np.argmax(y_test, axis=1)) / len(y_test)
 print('Accuracy on adversarial test examples: {}%'.format(accuracy * 100))
+
+elapsed = (time.clock() - start)
+print("Time used:", elapsed)

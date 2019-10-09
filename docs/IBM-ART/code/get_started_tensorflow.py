@@ -1,9 +1,3 @@
-"""
-该脚本演示了在TensorFlow v1.x中使用ART的简单示例。
-该示例在MNIST数据集上训练一个小模型，并使用快速梯度符号方法创建对抗性示例。
-这里我们使用ART分类器来训练模型，也可以为ART分类器提供一个预先训练好的模型。
-选择这些参数是为了减少脚本的计算需求，而不是为了提高准确性。
-"""
 # coding=utf-8
 import tensorflow as tf
 import numpy as np
@@ -11,6 +5,9 @@ import numpy as np
 from art.attacks import FastGradientMethod
 from art.classifiers import TFClassifier
 from art.utils import load_mnist
+import time
+
+start = time.clock()
 
 # Step 1: 加载MNIST数据集 28x28的灰度图 70000张手写数字图(6:1)
 
@@ -94,3 +91,6 @@ predictions = classifier.predict(x_test_adv)
 accuracy = np.sum(np.argmax(predictions, axis=1) == np.argmax(y_test, axis=1)) / len(y_test)
 print('Accuracy on adversarial test examples: {}%'.format(accuracy * 100))
 # 对10000个testing image生成对抗图片,然后用分类器对这10000个攻击进行预测
+
+elapsed = (time.clock() - start)
+print("Time used:", elapsed)

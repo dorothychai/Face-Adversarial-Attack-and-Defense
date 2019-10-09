@@ -2,6 +2,7 @@
 
 - [Setup](#set-up)
 - [Examples](#Examples)
+- [Applications](#Applications)
 
 
 
@@ -44,12 +45,18 @@ Time spent and Accuracy Comparison ：
 | keras      | 59.934484775       | 95.76%                           | 16.85%                                |
 | pytorch    | 91.72811700999999  | 96.25%                           | 16.43%                                |
 | mxnet      | 220.330242249      | 95.56%                           | 20.39%                                |
-| xgboost    |                    |                                  |                                       |
-| lightgbm   |                    |                                  |                                       |
+| xgboost    | 268.975837169      | 100.0%                           | 0.0%                                  |
+| lightgbm   | 1067.466168427     | 100.0%                           | 80.0%                                 |
 
 
 
 
+
+### Applications
+
+- <a href = "./code/adversarial_training_cifar10.py">adversarial_training_cifar10.py</a>
+
+- <a href = "./code/adversarial_training_data_augmentation.py">adversarial_training_data_augmentation.py</a>
 
 
 
