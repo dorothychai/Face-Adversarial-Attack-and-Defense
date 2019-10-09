@@ -36,16 +36,16 @@ The Adversarial Robustness 360 Toolbox is designed to run with Python 3.
 - <a href = "./code/get_started_xgboost.py">get_started_xgboost.py</a>
 - <a href = "./code/get_started_lightgbm.py">get_started_lightgbm.py</a>
 
-时间使用、accuracy：
+Time spent and Accuracy Comparison ：
 
-| 框架       | 花费时间 | Accuracy on benign test examples | Accuracy on adversarial test examples |
-| ---------- | -------- | -------------------------------- | ------------------------------------- |
-| tensorflow |          |                                  |                                       |
-| keras      |          |                                  |                                       |
-| pytorch    |          |                                  |                                       |
-| mxnet      |          |                                  |                                       |
-| xgboost    |          |                                  |                                       |
-| lightgbm   |          |                                  |                                       |
+| 框架       | 花费时间           | Accuracy on benign test examples | Accuracy on adversarial test examples |
+| ---------- | ------------------ | -------------------------------- | ------------------------------------- |
+| tensorflow | 47.400915401000006 | 95.09%                           | 16.81%                                |
+| keras      | 59.934484775       | 95.76%                           | 16.85%                                |
+| pytorch    | 91.72811700999999  | 96.25%                           | 16.43%                                |
+| mxnet      |                    |                                  |                                       |
+| xgboost    |                    |                                  |                                       |
+| lightgbm   |                    |                                  |                                       |
 
 
 
