@@ -56,6 +56,12 @@ Time spent and Accuracy Comparison ：
 
 - <a href = "./code/adversarial_training_cifar10.py">adversarial_training_cifar10.py</a>
 
+  | Framework | Time spent | Accuracy on benign test examples | Accuracy on adversarial test examples |
+  | --------- | ---------- | -------------------------------- | ------------------------------------- |
+  | keras     |            |                                  | 48.20%                                |
+
+  
+
 - <a href = "./code/adversarial_training_data_augmentation.py">adversarial_training_data_augmentation.py</a>
 
 
