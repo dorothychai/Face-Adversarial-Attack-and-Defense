@@ -38,7 +38,7 @@ The Adversarial Robustness 360 Toolbox is designed to run with Python 3.
 
 Time spent and Accuracy Comparison ：
 
-| 框架       | 花费时间           | Accuracy on benign test examples | Accuracy on adversarial test examples |
+| Framework  | Time spent         | Accuracy on benign test examples | Accuracy on adversarial test examples |
 | ---------- | ------------------ | -------------------------------- | ------------------------------------- |
 | tensorflow | 47.400915401000006 | 95.09%                           | 16.81%                                |
 | keras      | 59.934484775       | 95.76%                           | 16.85%                                |
@@ -46,6 +46,16 @@ Time spent and Accuracy Comparison ：
 | mxnet      | 220.330242249      | 95.56%                           | 20.39%                                |
 | xgboost    |                    |                                  |                                       |
 | lightgbm   |                    |                                  |                                       |
+
+
+
+
+
+
+
+
+
+
 
 
 
