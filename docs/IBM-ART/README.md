@@ -43,7 +43,7 @@ Time spent and Accuracy Comparison ：
 | tensorflow | 47.400915401000006 | 95.09%                           | 16.81%                                |
 | keras      | 59.934484775       | 95.76%                           | 16.85%                                |
 | pytorch    | 91.72811700999999  | 96.25%                           | 16.43%                                |
-| mxnet      |                    |                                  |                                       |
+| mxnet      | 220.330242249      | 95.56%                           | 20.39%                                |
 | xgboost    |                    |                                  |                                       |
 | lightgbm   |                    |                                  |                                       |
 
