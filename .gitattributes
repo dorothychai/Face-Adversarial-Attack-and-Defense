@@ -1,0 +1,6 @@
+*.md linguist-language=python
+*.python linguist-language=python
+*.html linguist-language=python
+*.png linguist-language=python
+*.jpg linguist-language=python
+*.jpeg linguist-language=python
