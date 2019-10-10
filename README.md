@@ -10,6 +10,7 @@
 	<a href="./docs/Adversarial-Attack-and-Detection.md">Adversarial-Attack</a>&nbsp;&nbsp;&nbsp;
 	<a href="./docs/AdvBox/README.md">AdvBox</a>&nbsp;&nbsp;&nbsp;
 	<a href="./docs/IBM-ART/README.md">IBM-ART</a>&nbsp;&nbsp;&nbsp;
+    <a href="./docs/GUI/README.md">GUI</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 ## Aim
