@@ -62,16 +62,28 @@ Time spent and Accuracy Comparison ：
 
   ```python
   [INFO] Create DeepFool attack.
+  # 用DeepFool针对classifier A训练出具有攻击性的classifier B
   [INFO] Craft attack on training examples.
+  # 用具有攻击性的classifier B针对从50000个训练集中选出来的5000个training samples X生成5000个adversarial examples Y
   [INFO] Success rate of DeepFool attack: 0.88%
-  [INFO] Craft attack test examples
+  # 用A对X预测的向量!=用A对Y预测的向量/y_train.shape[0]
+  [INFO] Craft attack on testing examples
+  # 用具有攻击性的classifier B针对从10000个训练集中选出来的500个testing samples I生成500个testing examples J
   [INFO] Success rate of DeepFool attack: 0.86%
+  # 用A对I预测的向量!=用A对J预测的向量/y_train.shape[0]
   [INFO] ---Before adversarial training---
   [INFO] Classifier before adversarial training
   [INFO] Accuracy on adversarial samples: 24.60%
+  # 用A对J预测的向量==实际的testing label/y_test.shape[0]
+  
+  # 数据扩充:用对抗性样本展开训练集,并用此数据集重新训练CNN生成classifier C
+  # x_train = np.append(x_train, x_train_adv, axis=0) 10000
+  # y_train = np.append(y_train, y_train, axis=0) 10000
   [INFO] ---After adversarial training---
   [INFO] Classifier with adversarial training
   [INFO] Accuracy on adversarial samples: 52.40%
+  # 用C对J预测的向量==实际的testing label/y_test.shape[0]
+  # 经过训练后得到的分类器C对对抗性例子J的识别性(识别为正确的label的意思)提高了
   Time used: 683.046962082
   ```
 
