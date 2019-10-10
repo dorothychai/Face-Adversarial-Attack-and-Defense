@@ -1,10 +1,18 @@
 # [IBM-ART](https://github.com/IBM/adversarial-robustness-toolbox)
 
+- [Dataset](#Dataset)
 - [Setup](#set-up)
 - [Examples](#Examples)
 - [Applications](#Applications)
 - [Notebooks](#Notebooks)
 - [Self-experiment](#Self-experiment)
+
+### Dataset
+
+| Dataset      | total data | training data | testing data | format  | label data |
+| ------------ | ---------- | ------------- | ------------ | ------- | ---------- |
+| **MNIST**    | 70000      | 60000         | 10000        | 20x20x1 | 10         |
+| **CIFAR-10** | 60000      | 50000         | 10000        | 32x32x3 | 10         |
 
 
 
@@ -138,8 +146,8 @@ Time spent and Accuracy Comparison ：
 
 ### Self-experiment
 
-- <a href = "./code/detection-adversarial-samples-CIFAR10.py">detection-adversarial-samples-CIFAR10</a>
-- 
+- 对抗性例子检测器：<a href = "./code/detection-adversarial-samples-CIFAR10.py">detection-adversarial-samples-CIFAR10.py</a>
+- 神经网络鲁棒性验证：<a href = "./code/output-randomized-smoothing-mnist.py">output-randomized-smoothing-mnist.py</a>
 
 
 
