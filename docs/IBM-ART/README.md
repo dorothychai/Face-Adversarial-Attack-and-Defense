@@ -56,9 +56,9 @@ Time spent and Accuracy Comparison ：
 
 - <a href = "./code/adversarial_training_cifar10.py">adversarial_training_cifar10.py</a>
 
-  | Framework | Time spent        | Accuracy on adversarial test examples |
-  | --------- | ----------------- | ------------------------------------- |
-  | keras     | 540.5198653479999 | 50.20%                                |
+  | Framework | Time spent        | Accuracy on adversarial test examples (Before Adversarial training) | Accuracy on adversarial test examples (After Adversarial training) |
+  | --------- | ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+  | keras     | 540.5198653479999 | (50.20%)                                                     |                                                              |
 
   > Create DeepFool attack.
   >
@@ -79,6 +79,15 @@ Time spent and Accuracy Comparison ：
   > Accuracy on adversarial samples: 50.20%.
   >
   > Time used: 540.5198653479999.
+
+  ```python
+  [INFO] Create DeepFool attack.
+  [INFO] Craft attack on training examples.
+  
+  
+  ```
+
+  
 
 - <a href = "./code/adversarial_training_data_augmentation.py">adversarial_training_data_augmentation.py</a>
 
