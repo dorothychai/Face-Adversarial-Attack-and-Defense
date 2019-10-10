@@ -1,1 +1,2 @@
 *.md linguist-language=python
+*.python linguist-language=python
