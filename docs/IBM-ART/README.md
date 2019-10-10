@@ -56,38 +56,24 @@ Time spent and Accuracy Comparison ：
 
 - <a href = "./code/adversarial_training_cifar10.py">adversarial_training_cifar10.py</a>
 
-  | Framework | Time spent        | Accuracy on adversarial test examples (Before Adversarial training) | Accuracy on adversarial test examples (After Adversarial training) |
-  | --------- | ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-  | keras     | 540.5198653479999 | (50.20%)                                                     |                                                              |
-
-  > Create DeepFool attack.
-  >
-  > Craft attack on training examples.
-  >
-  > Success rate of DeepFool attack: 0.92%
-  >
-  > Craft attack on testing examples.
-  >
-  > Success rate of DeepFool attack: 0.87%
-  >
-  > Classifier before adversarial training.
-  >
-  > Accuracy on adversarial samples: 23.80%.
-  >
-  > Classifier with adversarial training.
-  >
-  > Accuracy on adversarial samples: 50.20%.
-  >
-  > Time used: 540.5198653479999.
+  | Framework | Time spent    | Accuracy on adversarial test examples (Before Adversarial training) | Accuracy on adversarial test examples (After Adversarial training) |
+  | --------- | ------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+  | keras     | 683.046962082 | 24.60%                                                       | 52.40%                                                       |
 
   ```python
   [INFO] Create DeepFool attack.
   [INFO] Craft attack on training examples.
-  
-  
+  [INFO] Success rate of DeepFool attack: 0.88%
+  [INFO] Craft attack test examples
+  [INFO] Success rate of DeepFool attack: 0.86%
+  [INFO] ---Before adversarial training---
+  [INFO] Classifier before adversarial training
+  [INFO] Accuracy on adversarial samples: 24.60%
+  [INFO] ---After adversarial training---
+  [INFO] Classifier with adversarial training
+  [INFO] Accuracy on adversarial samples: 52.40%
+  Time used: 683.046962082
   ```
-
-  
 
 - <a href = "./code/adversarial_training_data_augmentation.py">adversarial_training_data_augmentation.py</a>
 
