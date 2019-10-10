@@ -115,7 +115,12 @@ Time spent and Accuracy Comparison ：
   - [attack_defence_imagenet.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/attack_defence_imagenet.ipynb)解释了将ART与防御和攻击一起用于ImageNet神经网络分类器的基本工作流程。
   - [attack_hopskipjump.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/attack_hopskipjump.ipynb)演示了HopSkipJumpAttack。这是一个黑盒攻击，只需要类预测。这是边界攻击的高级版本。
 - 分类器
-  - [classifier_blackbox.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_blackbox.ipynb)演示了BlackBoxClassifier，ART中最通用和万能的分类器，只需要一个单一的预测函数定义，不需要任何额外的假设或要求。该笔记展示了如何使用BlackBoxClassifier去攻击一个远程部署的模型(在本例中是在IBM Watson机器学习上，https://cloud.ibm.com)，并使用HopSkiJump攻击。
+  - [classifier_blackbox.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_blackbox.ipynb)演示了BlackBoxClassifier，ART中最通用和万能的分类器，只需要一个单一的预测函数定义，不需要任何额外的假设或要求。该笔记展示了如何使用BlackBoxClassifier分类器和HopSkiJump攻击去攻击一个远程部署的模型(在本例中是在IBM Watson机器学习上，https://cloud.ibm.com)。
+  - [classifier_blackbox_tesseract.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_blackbox_tesseract.ipynb)演示了对Tesseract OCR的黑盒攻击。它利用BlackBoxClassifier和HopSkipJump攻击将一个单词的图像转换成另一个单词的图像，并展示了如何应用预处理的防御。
+  - [classifier_catboost.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_catboost.ipynb)展示了如何使用ART的CatBoost模型。它使用Iris和MNIST数据集演示和分析了Zeroth Order Optimisation攻击。
+  - [classifier_gpy_gaussian_process.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_gpy_gaussian_process.ipynb)演示了如何为GPy的高斯过程分类器创建对抗性示例。它创造出专门针对Gaussian Process classifiers的HighConfidenceLowUncertainty (HCLU)攻击(Grosse et al.， 2018)，并将其与投影梯度下降Projected Gradient Descent(PGD)作比较(Madry et al.， 2017)。
+  - [classifier_lightgbm.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_lightgbm.ipynb)演示了如何使用ART的LightGBM模型。它使用Iris和MNIST数据集演示和分析了Zeroth Order Optimisation攻击。
+  - 
 
 
 
