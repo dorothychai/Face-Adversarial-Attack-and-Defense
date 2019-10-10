@@ -1,8 +1,9 @@
-# IBM-ART
+# [IBM-ART](https://github.com/IBM/adversarial-robustness-toolbox)
 
 - [Setup](#set-up)
 - [Examples](#Examples)
 - [Applications](#Applications)
+- [Notebooks](#Notebooks)
 
 
 
@@ -96,6 +97,37 @@ Time spent and Accuracy Comparison ：
   
 
 - 
+
+
+
+### Notebooks
+
+- 对抗性训练
+  - [adversarial_retraining.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/adversarial_retraining.ipynb)展示了如何加载和评估经过Sinn等人2019年合成和对抗性训练的MNIST和CIFAR-10模型。
+  - [adversarial_training_mnist.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/adversarial_training_mnist.ipynb)演示了如何在MNIST数据集上，用神经网络进行对抗性训练，以增强模型对对抗性样本的抵抗力。
+- Tensorflow v2
+  - [art-for-tensorflow-v2-callable.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/art-for-tensorflow-v2-callable.ipynb)演示了如何使用ART和Tensorflow v2在eager execution mode模式下使用可调用类或python函数形式的模型。
+  - [art-for-tensorflow-v2-keras.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/art-for-tensorflow-v2-keras.ipynb)演示了在没有eager execution mode模式的时候，ART与Tensorflow v2如何使用Tensorflow.keras。
+- 攻击
+  - [attack_adversarial_patch.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/attack_adversarial_patch.ipynb)演示了如何使用ART创建真实世界的对抗性补丁，欺骗真实世界的对象检测和分类模型。
+  - [attack_decision_based_boundary.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/attack_decision_based_boundary.ipynb)演示了基于决策的对抗攻击(边界)攻击。这是一个黑盒攻击，只需要类的预测。
+  - [attack_decision_tree.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/attack_decision_tree.ipynb)展示了如何使用决策树上来计算出对抗性例子(Papernot等，2016)。它通过遍历决策树分类器的结构来创建对抗性的例子，无需显式的梯度就可以计算出来。
+  - [attack_defence_imagenet.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/attack_defence_imagenet.ipynb)解释了将ART与防御和攻击一起用于ImageNet神经网络分类器的基本工作流程。
+  - [attack_hopskipjump.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/attack_hopskipjump.ipynb)演示了HopSkipJumpAttack。这是一个黑盒攻击，只需要类预测。这是边界攻击的高级版本。
+- 分类器
+  - [classifier_blackbox.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_blackbox.ipynb)演示了BlackBoxClassifier，ART中最通用和万能的分类器，只需要一个单一的预测函数定义，不需要任何额外的假设或要求。该笔记展示了如何使用BlackBoxClassifier去攻击一个远程部署的模型(在本例中是在IBM Watson机器学习上，https://cloud.ibm.com)，并使用HopSkiJump攻击。
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
