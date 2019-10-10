@@ -84,40 +84,51 @@ model.add(Dropout(0.5))
 model.add(Dense(10))
 # model.shape = (None, 10)
 model.add(Activation('softmax'))
-#
+
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-#
-# # 创建分类器包装器classifier wrapper
-# classifier = KerasClassifier(model=model, clip_values=(min_, max_))
-# classifier.fit(x_train, y_train, nb_epochs=10, batch_size=128)
-#
-# # 用DeepFool制作对抗性样本
-# logger.info('Create DeepFool attack')
-# adv_crafter = DeepFool(classifier)
-# logger.info('Craft attack on training examples')
-# x_train_adv = adv_crafter.generate(x_train)
-# logger.info('Craft attack test examples')
-# x_test_adv = adv_crafter.generate(x_test)
-#
-# # 在对抗性样本上评价分类器
-# preds = np.argmax(classifier.predict(x_test_adv), axis=1)
-# acc = np.sum(preds == np.argmax(y_test, axis=1)) / y_test.shape[0]
-# logger.info('Classifier before adversarial training')
-# logger.info('Accuracy on adversarial samples: %.2f%%', (acc * 100))
-#
-# # 数据扩充:用对抗性样本展开训练集
-# x_train = np.append(x_train, x_train_adv, axis=0)
-# y_train = np.append(y_train, y_train, axis=0)
-#
-# # 在扩展数据集上重新训练CNN
-# model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-# classifier.fit(x_train, y_train, nb_epochs=10, batch_size=128)
-#
-# # 用测试集评估经过对抗例子训练的分类器
-# preds = np.argmax(classifier.predict(x_test_adv), axis=1)
-# acc = np.sum(preds == np.argmax(y_test, axis=1)) / y_test.shape[0]
-# logger.info('Classifier with adversarial training')
-# logger.info('Accuracy on adversarial samples: %.2f%%', (acc * 100))
-#
-# elapsed = (time.clock() - start)
-# print("Time used:", elapsed)
+# model.shape = (None, 10)
+print(model.output_shape)
+
+# 创建分类器包装器classifier wrapper
+classifier = KerasClassifier(model=model, clip_values=(min_, max_))
+classifier.fit(x_train, y_train, nb_epochs=10, batch_size=128)
+# classifier._output = 0
+# classifier.input_shape = (32,32,3)
+# epoch：1个epoch等于使用训练集中的全部样本训练一次
+# batchsize：批大小,一般采用SGD训练，每次训练在训练集中取batchsize个样本训练
+# iteration：1个iteration等于使用batchsize个样本训练一次
+# 训练集有1000个样本，batchsize=10，那么训练完整个样本集需要：100次iteration，1次epoch
+
+# 用DeepFool制作对抗性样本
+logger.info('Create DeepFool attack')
+adv_crafter = DeepFool(classifier)  # 针对classifier训练一个对抗性的classifier
+logger.info('Craft attack on training examples')
+x_train_adv = adv_crafter.generate(x_train)  # 用对抗性的classifier去训练image--对抗性示例
+logger.info('Craft attack on testing examples')
+x_test_adv = adv_crafter.generate(x_test)
+
+# 在对抗性样本上评价分类器
+preds = np.argmax(classifier.predict(x_test_adv), axis=1)
+acc = np.sum(preds == np.argmax(y_test, axis=1)) / y_test.shape[0]
+logger.info('---Before adversarial training---')
+logger.info('Classifier before adversarial training')
+logger.info('Accuracy on adversarial samples: %.2f%%', (acc * 100))
+
+# 数据扩充:用对抗性样本展开训练集
+x_train = np.append(x_train, x_train_adv, axis=0)  # 5000+5000=10000
+# axis = 0 代表对横轴操作 axis = 1 代表对纵轴操作
+y_train = np.append(y_train, y_train, axis=0)  # 5000+5000=10000
+
+# 在扩展数据集上重新训练CNN
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+classifier.fit(x_train, y_train, nb_epochs=10, batch_size=128)
+
+# 用测试集评估经过对抗例子训练的分类器
+preds = np.argmax(classifier.predict(x_test_adv), axis=1)
+acc = np.sum(preds == np.argmax(y_test, axis=1)) / y_test.shape[0]
+logger.info('---After adversarial training---')
+logger.info('Classifier with adversarial training')
+logger.info('Accuracy on adversarial samples: %.2f%%', (acc * 100))
+
+elapsed = (time.clock() - start)
+print("Time used:", elapsed)

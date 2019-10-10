@@ -56,6 +56,8 @@ Time spent and Accuracy Comparison ：
 
 - <a href = "./code/adversarial_training_cifar10.py">adversarial_training_cifar10.py</a>
 
+  > trains a convolutional neural network on the CIFAR-10 dataset, then generates adversarial images using the DeepFool attack and retrains the network on the training set augmented with the adversarial images.
+
   | Framework | Time spent    | Accuracy on adversarial test examples (Before Adversarial training) | Accuracy on adversarial test examples (After Adversarial training) |
   | --------- | ------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
   | keras     | 683.046962082 | 24.60%                                                       | 52.40%                                                       |
@@ -71,7 +73,7 @@ Time spent and Accuracy Comparison ：
   # 用具有攻击性的classifier B针对从10000个训练集中选出来的500个testing samples I生成500个testing examples J
   [INFO] Success rate of DeepFool attack: 0.86%
   # 用A对I预测的向量!=用A对J预测的向量/y_train.shape[0]
-  [INFO] ---Before adversarial training---
+  [INFO] Before adversarial training
   [INFO] Classifier before adversarial training
   [INFO] Accuracy on adversarial samples: 24.60%
   # 用A对J预测的向量==实际的testing label/y_test.shape[0]
@@ -79,7 +81,7 @@ Time spent and Accuracy Comparison ：
   # 数据扩充:用对抗性样本展开训练集,并用此数据集重新训练CNN生成classifier C
   # x_train = np.append(x_train, x_train_adv, axis=0) 10000
   # y_train = np.append(y_train, y_train, axis=0) 10000
-  [INFO] ---After adversarial training---
+  [INFO] After adversarial training
   [INFO] Classifier with adversarial training
   [INFO] Accuracy on adversarial samples: 52.40%
   # 用C对J预测的向量==实际的testing label/y_test.shape[0]
@@ -88,6 +90,12 @@ Time spent and Accuracy Comparison ：
   ```
 
 - <a href = "./code/adversarial_training_data_augmentation.py">adversarial_training_data_augmentation.py</a>
+
+  > shows how to use ART and Keras to perform adversarial training using data generators for CIFAR-10.
+
+  
+
+- 
 
 
 
