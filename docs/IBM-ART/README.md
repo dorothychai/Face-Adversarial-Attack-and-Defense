@@ -120,7 +120,26 @@ Time spent and Accuracy Comparison ：
   - [classifier_catboost.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_catboost.ipynb)展示了如何使用ART的CatBoost模型。它使用Iris和MNIST数据集演示和分析了Zeroth Order Optimisation攻击。
   - [classifier_gpy_gaussian_process.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_gpy_gaussian_process.ipynb)演示了如何为GPy的高斯过程分类器创建对抗性示例。它创造出专门针对Gaussian Process classifiers的HighConfidenceLowUncertainty (HCLU)攻击(Grosse et al.， 2018)，并将其与投影梯度下降Projected Gradient Descent(PGD)作比较(Madry et al.， 2017)。
   - [classifier_lightgbm.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_lightgbm.ipynb)演示了如何使用ART的LightGBM模型。它使用Iris和MNIST数据集演示和分析了Zeroth Order Optimisation攻击。
-  - 
+  - [classifier_scikitlearn_AdaBoostClassifier.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_scikitlearn_AdaBoostClassifier.ipynb)演示了如何使用ART的Scikit-learn AdaBoostClassifier。它使用Iris和MNIST数据集演示和分析了Zeroth Order Optimisation攻击。
+  - [classifier_scikitlearn_BaggingClassifier.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_scikitlearn_BaggingClassifier.ipynb)演示如何使用ART的Scikit-learn BaggingClassifier。它使用Iris和MNIST数据集演示和分析了Zeroth Order Optimisation攻击。
+  - [classifier_scikitlearn_DecisionTreeClassifier.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_scikitlearn_DecisionTreeClassifier.ipynb)演示如何使用ART的Scikit-learn DecisionTreeClassifier。它使用Iris和MNIST数据集演示和分析了Zeroth Order Optimisation攻击。
+  - [classifier_scikitlearn_ExtraTreesClassifier.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_scikitlearn_ExtraTreesClassifier.ipynb)演示如何使用ART的Scikit-learn ExtraTreesClassifier。它使用Iris和MNIST数据集演示和分析了Zeroth Order Optimisation攻击。
+  - [classifier_scikitlearn_GradientBoostingClassifier.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_scikitlearn_GradientBoostingClassifier.ipynb)演示如何使用ART的Scikit-learn GradientBoostingClassifier。它使用Iris和MNIST数据集演示和分析了Zeroth Order Optimisation攻击。
+  - [classifier_scikitlearn_LogisticRegression.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_scikitlearn_LogisticRegression.ipynb)演示如何使用ART的Scikit-learn LogisticRegression。它使用Iris和MNIST数据集演示和分析了Zeroth Order Optimisation攻击。
+  - [classifier_scikitlearn_pipeline_pca_cv_svc.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_scikitlearn_pipeline_pca_cv_svc.ipynb)包含一个使用黑箱攻击生成对抗性示例的example，该攻击针对的是由主成分分析(PCA)、交叉验证(CV)和支持向量机分类器(SVC)组成的scikit-learn管道，但是其他任何有效的管道也可以。使用带交叉验证的网格搜索优化管道。对抗样本是用黑箱HopSkipJump攻击创建的。训练数据是MNIST，因为它的直观的可视化，但任何其他数据集，包括表格数据也将是合适的。
+  - [classifier_scikitlearn_RandomForestClassifier.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_scikitlearn_RandomForestClassifier.ipynb)演示如何使用ART的Scikit-learn RandomForestClassifier。它使用Iris和MNIST数据集演示和分析了Zeroth Order Optimisation攻击。
+  - [classifier_scikitlearn_SVC_LinearSVC.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_scikitlearn_SVC_LinearSVC.ipynb)演示如何使用ART的Scikit-learn SVC和LinearSVC支持向量机。它使用Iris和MNIST数据集演示和分析了针对”linear和radial-basis-function kernels的二分和多分的分类器“的Projected Gradient Descent attacks。
+  - [classifier_xgboost.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/classifier_xgboost.ipynb)演示如何使用ART的Scikit-learn XGBoost 。它使用Iris和MNIST数据集演示和分析了Zeroth Order Optimisation攻击。
+- 检测器
+  - [detection_adversarial_samples_cifar10.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/detection_adversarial_samples_cifar10.ipynb)演示了如何使用ART的针对对抗性例子的检测器。这个分类器是一个针对CIFAR-10数据集的在Keras中ResNet结构的神经网络。
+- 毒药攻击Poisoning
+  - [poisoning_attack_svm.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/poisoning_attack_svm.ipynb)演示了针对支持向量机的中毒攻击。
+  - [poisoning_dataset_mnist.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/poisoning_dataset_mnist.ipynb)在神经网络中演示了通过对训练数据集进行施毒后，后门的生成和检测。
+- 认证和验证
+  - [output_randomized_smoothing_mnist.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/output_randomized_smoothing_mnist.ipynb)演示了如何通过随机平滑来实现神经网络的对抗性鲁棒性。
+  - [robustness_verification_clique_method_tree_ensembles_gradient_boosted_decision_trees_classifiers.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/robustness_verification_clique_method_tree_ensembles_gradient_boosted_decision_trees_classifiers.ipynb)利用XGBoost、LightGBM和Scikit-learn对决策树集成分类器(梯度增强决策树、随机森林等)中的对抗鲁棒性进行了验证。
+- MNIST
+  - [fabric_for_deep_learning_adversarial_samples_fashion_mnist.ipynb](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/notebooks/fabric_for_deep_learning_adversarial_samples_fashion_mnist.ipynb)展示如何使用ART中的由Fabric for Deep Learning (FfDL)训练的深度学习模型。
 
 
 
