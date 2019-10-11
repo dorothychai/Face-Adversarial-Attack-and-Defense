@@ -21,8 +21,11 @@ Competition tracks:
 	Targeted Attacks Track
 each sample:(apply the five best untargeted attacks on M for each sample in S.)
 	record the minimum adversarial L2 distance (MAD) across the attacks.
-
-
+the minimum adversarial distance is registered as zero for this sample:
+	If a model misclassifies a sample
+The final model score:
+	is the median MAD across all samples.
+The higher the score, the better.
 
 
 
