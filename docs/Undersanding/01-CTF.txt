@@ -1,0 +1,60 @@
+攻击者：找到最小的图像扰动，以使分类器蒙蔽。
+防御者：尝试构建对图像尽可能鲁棒的object classifier对象分类器。
+Attacker:find the smallest possible image perturbations that will fool a classifier.
+Defender:build a visual object classifier that is as robust to image perturbations as possible.
+
+Progress towards:
+	robust machine vision models
+	more generally applicable adversarial attacks
+
+adversarial examples:
+	modern machine vision algorithms are extremely susceptible to small and almost imperceptible perturbations of their inputs.
+small image perturbations:
+	change the prediction of your model to the wrong class.
+astonishing difference in:
+	difference in the information processing of humans and machines
+Improving the robustness of vision algorithms:
+	close the gap between human and machine perception
+Competition tracks:
+	Robust Model Track
+	Untargeted Attacks Track
+	Targeted Attacks Track
+each sample:(apply the five best untargeted attacks on M for each sample in S.)
+	record the minimum adversarial L2 distance (MAD) across the attacks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

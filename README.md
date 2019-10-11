@@ -63,6 +63,8 @@
 - [handong1587.github.io](https://github.com/handong1587/handong1587.github.io/tree/master/_posts)
 - [adversarial-machine-learning topic](http://git.azurewebsites.net/topics/adversarial-machine-learning)
 
+- 
+
 ## Documentation Examples
 
 - [artemis](https://github.com/FORTH-ICS-INSPIRE/artemis)
@@ -76,3 +78,8 @@
 - [对抗样本：知其然，知其所以然](https://www.tinymind.cn/articles/1189)
 - [逃避对机器学习的攻击](https://towardsdatascience.com/evasion-attacks-on-machine-learning-or-adversarial-examples-12f2283e06a1)
 
+- [对抗攻击论文](https://github.com/lhaof/Adversarial-Attack-Papers)
+
+- [MCS2018_挑战](https://github.com/AlexGrinch/mcs2018_challenge)
+
+- [对抗鲁棒性](https://github.com/hfeng-xia/adversarial-robustness)
