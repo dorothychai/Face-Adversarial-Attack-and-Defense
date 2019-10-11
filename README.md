@@ -50,4 +50,29 @@
 
      - repository https://github.com/miltonbd/mcs_2018_adversarial_attack 
 
-9. 
+
+## Some Open Source
+
+- [Synced](https://syncedreview.com/2019/08/09/semantic-based-adversarial-examples-fool-face-recognition/)
+- [Adversarial-Face-Attack](https://github.com/ppwwyyxx/Adversarial-Face-Attack)
+- [Adversarial-Occlussion-aware-Face-Detection](https://github.com/IssacCyj/Adversarial-Occlussion-aware-Face-Detection)
+- [Fake Face Detect](https://github.com/advboxes/AdvBox/blob/master/applications/fake_face_detect/README.md)
+- [face-swap topic](https://github.com/topics/face-swap)
+- [FaceForensics](https://github.com/ondyari/FaceForensics)
+- [Learn-Convolutional-Neural-Network-for-Face-Anti-Spoofing](https://github.com/mnikitin/Learn-Convolutional-Neural-Network-for-Face-Anti-Spoofing)
+- [handong1587.github.io](https://github.com/handong1587/handong1587.github.io/tree/master/_posts)
+- [adversarial-machine-learning topic](http://git.azurewebsites.net/topics/adversarial-machine-learning)
+
+## Documentation Examples
+
+- [artemis](https://github.com/FORTH-ICS-INSPIRE/artemis)
+- [Near and long-term directions for adversarial AI in cybersecurity](https://www.vectra.ai/blogpost/near-and-long-term-directions-for-adversarial-ai-in-cybersecurity-2)
+- [保护AI模型免受音频对抗攻击](https://bdtechtalks.com/2019/04/29/ai-audio-adversarial-examples/)
+- [破解深度学习模型：您甚至不需要博士学位或GPU](https://medium.com/axionable-ai-and-blockchain/hacking-deep-learning-models-you-dont-even-need-a-phd-nor-a-gpu-52125c956ec8)
+- [对抗攻击（Adversarial attacks）的常用术语](https://blog.csdn.net/C_chuxin/article/details/85216846)
+- [AI对抗攻击](https://blog.csdn.net/MYRLibra/article/details/96479451)
+- [一张贴纸欺骗AI，对抗性补丁让人类隐身](https://blog.csdn.net/u013185349/article/details/89494191)
+- [多伦多大学反人脸识别，身份欺骗成功率达99.5%](https://blog.csdn.net/yunqiinsight/article/details/80571554)
+- [对抗样本：知其然，知其所以然](https://www.tinymind.cn/articles/1189)
+- [逃避对机器学习的攻击](https://towardsdatascience.com/evasion-attacks-on-machine-learning-or-adversarial-examples-12f2283e06a1)
+
