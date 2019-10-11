@@ -26,7 +26,7 @@
   >
   > **Hardware Requirements**
   >
-  > 
+  > If using an Nvidia GPU, then it needs to support at least CUDA Compute Capability 3.0 or higher. 
 
 
 
